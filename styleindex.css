@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main{
+    min-height: 100dvh;
+}
+.headername{
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem;
+}
+.headername h1{
+    font-size: 3rem;
+}
+.mainnav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10rem;
+}
+.navleft{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+.navright{
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+.navmid{
+    flex-shrink: 0;
+}
+.navbutton{
+    text-decoration: none;
+    color: white;
+    background-image: linear-gradient(to bottom right, blue, rgb(178, 0, 178));
+    padding: 0.7rem 2.5rem;
+    border-radius: 0.8rem;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleindex.css">
+</head>
+<body>
+    <section class="main">
+        <section class="headername">
+            <h1>Gym planner</h1>
+        </section>
+        <nav class="mainnav">
+            <section class="navleft">
+                <a class="navbutton" href="#">Hem</a>
+            </section>
+            <a class="navbutton navmid" href="schemaoverview.php">Scheman</a>
+            <section class="navright">
+                <a class="navbutton" href="#">Login</a>
+            </section>
+        </nav>
+    </section>
+</body>
+</html>
