@@ -13,12 +13,8 @@
     </header>
     <section class="main">
         <section id="exercises-container">
-            <section class="name-of-excersice">
-                <input id="Name" type="text" name="excersice" placeholder="Excersice name" maxlength="20" pattern="[a-zA-ZåäöÅÄÖ]{1,40}">
-                <section class="line"></section>
-            </section>
+            
         </section>
-
         <section class="add-or-remove-excersice">
             <button class="formbutton" onclick="addExercise()">Add excersice</button>
             <button class="formbutton" onclick="removeExercise()">Remove excersice</button>
