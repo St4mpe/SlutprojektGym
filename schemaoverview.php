@@ -1,12 +1,12 @@
 <?php 
-session_start();
-
-if (!isset($_SESSION['numexcersice'])) {
-    $_SESSION['numexcersice'] = 1;
-}
+require_once("functions.php");
 
 if (isset($_POST['home'])){
     header("Location: index.php");
+}
+
+if (!isset($_SESSION['numexcersice'])) {
+    $_SESSION['numexcersice'] = 1;
 }
 
 if (isset($_POST['add'])){
@@ -39,14 +39,16 @@ if (isset($_POST['remove'])){
         for($i = 1; $i <= $_SESSION['numexcersice']; $i++)
         {?>
             <section class="baseplate">
-                
+                <form class="name-of-excersice" action="schemaoverview.php" method="POST">
+                    <input id="Name" type="text" name="excersice" placeholder="Excersice name" required maxlength="20" pattern="[a-zA-ZåäöÅÄÖ]{1,40}">
+                    <section class="line"></section>
+                </form>
             </section>
         <?php 
         }?>
         <form class="add-or-remove-excersice" action="schemaoverview.php" method="POST">
-            <input type="submit" value="add excersice" name="add">
-            <input type="submit" value="Go Home" name="home">
-            <input type="submit" value="remove excersice" name="remove">
+            <input class="formbutton" type="submit" value="Add excersice" name="add">
+            <input class="formbutton" type="submit" value="Remove excersice" name="remove">
         </form>
     </section>
 </body>
