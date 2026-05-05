@@ -11,8 +11,16 @@ function createSetRow(setNumber) {
             <input id="reps" type="text" name="reps" min="1" max="999">
         </section>
         <section>
-            <span class="set-label">Weight (Kg1): </span>
+            <span class="set-label">Weight (Kg): </span>
             <input type="text" name="weight" min="0" max="9999">
+        </section>
+        <section>
+            <span class="set-label">RPE: </span>
+            <input type="text" name="rpe" min="0" max="9999">
+        </section>
+        <section>
+            <span class="set-label">Completed: </span>
+            <input type="checkbox" name="completed" min="0" max="9999">
         </section>
     `;
 
