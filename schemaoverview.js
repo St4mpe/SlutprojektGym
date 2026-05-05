@@ -51,9 +51,6 @@ function createExercise(i) {
             <input class="name" type="text" name="excersice" placeholder="Excersice name" maxlength="20" pattern="[a-zA-ZåäöÅÄÖ]{1,40}">
             <section class="line"></section>
         </section>
-        <section class="">
-        
-        </section>
         <section class="sets-container"></section>
         <section class="exercise-buttons">
             <button class="formbutton" type="button" onclick="addSet(this)">Add set</button>
