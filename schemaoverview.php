@@ -5,6 +5,10 @@ if (!isset($_SESSION['numexcersice'])) {
     $_SESSION['numexcersice'] = 1;
 }
 
+if (isset($_POST['home'])){
+    header("Location: index.php");
+}
+
 if (isset($_POST['add'])){
     $_SESSION['numexcersice']++;
     header("Location: schemaoverview.php");
@@ -41,6 +45,7 @@ if (isset($_POST['remove'])){
         }?>
         <form class="add-or-remove-excersice" action="schemaoverview.php" method="POST">
             <input type="submit" value="add excersice" name="add">
+            <input type="submit" value="Go Home" name="home">
             <input type="submit" value="remove excersice" name="remove">
         </form>
     </section>
