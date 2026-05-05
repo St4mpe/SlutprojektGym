@@ -34,6 +34,15 @@ header{
 }
 .name{
     font-size: 1.5rem;
+    background: none;
+    border: 0;
+}
+.sets{
+    background: none;
+    border: 0;
+}
+.sets:focus{
+    outline: none;
 }
 .line{
     width: 100%;
@@ -65,4 +74,36 @@ header{
     margin: 0;
     padding: 0;
     color: rgb(178, 0, 178);
+}
+.set-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.5rem 1.5rem;
+}
+
+.set-label {
+    width: 3.5rem;
+    font-weight: bold;
+    color: rgb(100, 100, 100);
+}
+
+.set-row input {
+    background: none;
+    border: 0;
+    border-bottom: 2px solid rgb(139, 139, 139);
+    width: 8rem;
+    font-size: 1rem;
+    padding: 0.2rem 0;
+}
+
+.set-row input:focus {
+    outline: none;
+}
+
+.exercise-buttons {
+    padding: 0.5rem 1.5rem 1rem 1.5rem;
+    display: flex;
+    gap: 1.5rem;
 }
