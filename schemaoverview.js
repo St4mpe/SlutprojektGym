@@ -1,3 +1,46 @@
+function collectWorkoutData() {
+    const scheduleName = document.querySelector('input[name="scheeduleName"]').value;
+    const workoutData = {
+        scheduleName: scheduleName,
+        exercises: []
+    };
+
+    const baseplates = document.querySelectorAll('.baseplate');
+
+    baseplates.forEach((baseplate, exerciseIndex) => {
+        const exerciseName = baseplate.querySelector('input[name="excersice"]').value;
+        const sets = [];
+
+        const setRows = baseplate.querySelectorAll('.set-row');
+
+        setRows.forEach((row, setIndex) => {
+            const reps = row.querySelector('input[name="reps"]').value;
+            const weight = row.querySelector('input[name="weight"]').value;
+            const rpe = row.querySelector('input[name="rpe"]').value;
+            const completed = row.querySelector('input[name="completed"]').checked;
+
+            sets.push({
+                set: setIndex + 1,
+                reps: reps,
+                weight: weight,
+                rpe: rpe,
+                completed: completed
+            });
+        });
+
+        workoutData.exercises.push({
+            exercise: exerciseIndex + 1,
+            name: exerciseName,
+            sets: sets
+        });
+    });
+
+    const json = JSON.stringify(workoutData, null, 2);
+    console.log(json);
+
+    return workoutData;
+}
+
 let numExercises = 1;
 
 function createSetRow(setNumber) {
@@ -8,7 +51,7 @@ function createSetRow(setNumber) {
         <span class="set-label">Set ${setNumber}</span>
         <section>
             <span class="set-label">Reps: </span>
-            <input id="reps" type="text" name="reps" min="1" max="999">
+            <input class="reps" type="text" name="reps" min="1" max="999">
         </section>
         <section>
             <span class="set-label">Weight (Kg): </span>
