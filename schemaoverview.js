@@ -1,5 +1,5 @@
-function collectWorkoutData() {
-    const scheduleName = document.querySelector('input[name="scheeduleName"]').value;
+async function collectWorkoutData() {
+    const scheduleName = document.querySelector('input[name="scheeduleName"]').value || "Untitled";
     const workoutData = {
         scheduleName: scheduleName,
         exercises: []
@@ -17,14 +17,12 @@ function collectWorkoutData() {
             const reps = row.querySelector('input[name="reps"]').value;
             const weight = row.querySelector('input[name="weight"]').value;
             const rpe = row.querySelector('input[name="rpe"]').value;
-            const completed = row.querySelector('input[name="completed"]').checked;
 
             sets.push({
                 set: setIndex + 1,
                 reps: reps,
                 weight: weight,
                 rpe: rpe,
-                completed: completed
             });
         });
 
@@ -38,7 +36,11 @@ function collectWorkoutData() {
     const json = JSON.stringify(workoutData, null, 2);
     console.log(json);
 
-    return workoutData;
+    const response = await fetch('save_workout.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: json
+    });
 }
 
 let numExercises = 1;
