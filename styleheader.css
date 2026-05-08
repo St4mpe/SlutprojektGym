@@ -6,14 +6,6 @@
 .main{
     min-height: 100dvh;
 }
-.headername{
-    width: 100%;
-    text-align: center;
-    padding: 1.5rem;
-}
-.headername h1{
-    font-size: 3rem;
-}
 .mainnav{
     display: flex;
     flex-direction: row;

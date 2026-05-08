@@ -41,6 +41,8 @@ async function collectWorkoutData() {
         headers: { 'Content-Type': 'application/json' },
         body: json
     });
+
+    location.href = "index.php";
 }
 
 let numExercises = 1;

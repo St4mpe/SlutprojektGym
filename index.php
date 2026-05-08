@@ -7,19 +7,9 @@
     <link rel="stylesheet" href="styleindex.css">
 </head>
 <body>
-    <section class="main">
-        <section class="headername">
-            <h1>Gym planner</h1>
-        </section>
-        <nav class="mainnav">
-            <section class="navleft">
-                <a class="navbutton" href="#">Hem</a>
-            </section>
-            <a class="navbutton navmid" href="schemaoverview.php">Scheman</a>
-            <section class="navright">
-                <a class="navbutton" href="#">Login</a>
-            </section>
-        </nav>
+    <section class="headername">
+        <h1>Gym planner</h1>
     </section>
+    <?php require_once("header.php"); ?>
 </body>
 </html>

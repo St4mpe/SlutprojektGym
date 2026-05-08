@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url("färger.css");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: var(--mainBackground);
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    place-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.login-page{
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+.form{
+    position: relative;
+    z-index: 1;
+    background: var(--mainBackground);
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgb(203, 203, 203), 0 5px 5px 0 rgb(203, 203, 203);
+    border-radius: 4px;
+}
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"],
+.form input[type="stad"],
+.form input[type="gata"],
+.form input[type="postnummer"]{
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #e7e7e7;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 3px;
+    transition: background 0.3s ease;
+}
+.form input[type="text"]:focus,
+.form input[type="email"]:focus,
+.form input[type="password"]:focus,
+.form input[type="stad"]:focus,
+.form input[type="gata"]:focus,
+.form input[type="postnummer"]:focus{
+    background: #c6c6c6;
+}
+.form input[type="submit"]{
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: blue;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    border-radius: 3px;
+    transition: background 0.3s ease, transform 0.1s ease;
+    cursor: pointer;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.form input[type="submit"]:hover {
+    background: var(--hoverinlogg);
+}
+.form input[type="submit"]:active {
+    background: var(--hoverinlogg);
+    transform: scale(0.98);
+}
+.form .message{
+    margin: 15px 0 0;
+    color: #888888;
+    font-size: 12px;
+}
+.form .message a{
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+.form .register-form{
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+.form .login-form{
+    display: block;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+.form .register-form.active{
+    display: block;
+    opacity: 1;
+}
+.form .login-form.active{
+    display: none;
+    opacity: 0;
+}
