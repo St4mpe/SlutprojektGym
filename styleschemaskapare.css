@@ -1,3 +1,4 @@
+@import url("färger.css");
 *{
     margin: 0;
     padding: 0;
@@ -93,14 +94,14 @@ header{
 .formbutton{
     background: none;
     border: 0;
-    color: rgb(0, 0, 205);
+    color: var(--darkerblue);
 }
 .formbutton:hover{
     background: none;
     border: 0;
     margin: 0;
     padding: 0;
-    color: rgb(178, 0, 178);
+    color: var(--purple);
 }
 .set-row {
     display: flex;

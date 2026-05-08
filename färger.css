@@ -1,0 +1,8 @@
+:root{
+    --blue: rgb(0, 0, 255);
+    --darkerblue: rgb(0, 0, 173);
+    --purple: rgb(178, 0, 178);
+    --darkerpurple: rgb(160, 0, 160);
+    --bluepurplefade: linear-gradient(to bottom right, var(--blue), var(--purple));
+    --darkerbluepurplefade: linear-gradient(to bottom right, var(--darkerblue), var(--darkerpurple));
+}

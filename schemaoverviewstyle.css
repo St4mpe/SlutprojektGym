@@ -1,3 +1,5 @@
+@import url("färger.css");
+
 .headername{
     width: 100%;
     text-align: center;
@@ -17,7 +19,7 @@
 .logoutbutton{
     text-decoration: none;
     color: white;
-    background-image: linear-gradient(to bottom right, blue, rgb(178, 0, 178));
+    background-image: var(--bluepurplefade);
     padding: 0.7rem 2.5rem;
     border-radius: 0.7rem;
     border: 0;

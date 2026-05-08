@@ -64,7 +64,7 @@ body{
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
-    background: blue;
+    background: var(--bluepurplefade);
     width: 100%;
     border: 0;
     padding: 15px;
@@ -77,10 +77,10 @@ body{
     margin-bottom: 10px;
 }
 .form input[type="submit"]:hover {
-    background: var(--hoverinlogg);
+    background: var(--darkerbluepurplefade);
 }
 .form input[type="submit"]:active {
-    background: var(--hoverinlogg);
+    background: var(--darkerbluepurplefade);
     transform: scale(0.98);
 }
 .form .message{
@@ -89,7 +89,7 @@ body{
     font-size: 12px;
 }
 .form .message a{
-    color: blue;
+    color: var(--darkerblue);
     text-decoration: none;
     font-weight: bold;
     transition: color 0.2s ease;
