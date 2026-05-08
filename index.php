@@ -1,3 +1,7 @@
+<?php 
+require_once("functions.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +12,7 @@
 </head>
 <body>
     <section class="headername">
-        <h1>Gym planner</h1>
+        <h1>Gymschema Planerare</h1>
     </section>
     <?php require_once("header.php"); ?>
 </body>

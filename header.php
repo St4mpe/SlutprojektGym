@@ -9,10 +9,10 @@
 <body>
     <section class="main">
         <nav class="mainnav">
-            <section class="navleft">
+            <section class="navobj">
                 <a class="navbutton" href="index.php">Hem</a>
             </section>
-            <section class="navright">
+            <section class="navobj">
                 <?php 
                 if (isset($_SESSION['userLoggedIn'])) {
                     if ($_SESSION['userLoggedIn'] == 1) { ?>
