@@ -15,5 +15,10 @@ require_once("functions.php");
         <h1>Min sida</h1>
     </section>
     <?php require_once("header.php"); ?>
+    <section class="main">
+        <section>
+            <a href="schemaskapare.php"> Schemaskaparen</a>
+        </section>
+    </section>
 </body>
 </html>

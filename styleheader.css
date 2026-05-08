@@ -3,9 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-.main{
-    min-height: 100dvh;
-}
 .mainnav{
     display: flex;
     flex-direction: row;

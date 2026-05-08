@@ -6,3 +6,6 @@
 .headername h1{
     font-size: 3rem;
 }
+.main{
+    min-height: 100dvh;
+}

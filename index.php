@@ -8,7 +8,7 @@ require_once("functions.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styleindex.css">
+    <link rel="stylesheet" href="indexstyle.css">
 </head>
 <body>
     <section class="headername">
