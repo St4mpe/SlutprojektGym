@@ -1,5 +1,12 @@
 <?php 
 require_once("functions.php");
+
+if (isset($_POST['logout']))
+{
+    $_SESSION['userLoggedIn'] = false;
+    header("Location: index.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +25,11 @@ require_once("functions.php");
     <section class="main">
         <section>
             <a href="schemaskapare.php"> Schemaskaparen</a>
+        </section>
+        <section class="form">
+            <form class="logout-form" action="schemaoverview.php" method="POST">
+                <input type="submit" value="Log out" name="logout"/>
+            </form>
         </section>
     </section>
 </body>

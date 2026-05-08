@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styleheader.css">
 </head>
 <body>
-    <section class="main">
+    <section>
         <nav class="mainnav">
             <section class="navobj">
                 <a class="navbutton" href="index.php">Hem</a>
