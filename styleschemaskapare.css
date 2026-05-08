@@ -138,3 +138,17 @@ header{
     display: flex;
     gap: 1.5rem;
 }
+.save{
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+.saveButton{
+    text-decoration: none;
+    color: white;
+    background-image: var(--bluepurplefade);
+    padding: 0.7rem 2.5rem;
+    border-radius: 0.7rem;
+    border: 0;
+    margin-bottom: 2rem;
+}

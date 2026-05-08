@@ -24,7 +24,9 @@ require_once("functions.php");
         <section class="add-or-remove-excersice">
             <button class="formbutton" type="button" onclick="addExercise()">Add excersice</button>
             <button class="formbutton" type="button" onclick="removeExercise()">Remove excersice</button>
-            <button class="formbutton" type="button" onclick="collectWorkoutData()">Save Workout</button>
+        </section>
+        <section class="save">
+            <button class="saveButton" type="button" onclick="collectWorkoutData()">Save Workout</button>
         </section>
     </section>
 </body>
