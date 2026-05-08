@@ -19,7 +19,7 @@ if (isset($_POST['logout']))
 </head>
 <body>
     <section class="headername">
-        <h1>Min sida</h1>
+        <h1>Konto</h1>
     </section>
     <?php require_once("header.php"); ?>
     <section class="main">
