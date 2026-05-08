@@ -9,3 +9,17 @@
 .main{
     min-height: 100dvh;
 }
+.logout-form{
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+.logoutbutton{
+    text-decoration: none;
+    color: white;
+    background-image: linear-gradient(to bottom right, blue, rgb(178, 0, 178));
+    padding: 0.7rem 2.5rem;
+    border-radius: 0.7rem;
+    border: 0;
+    margin-bottom: 2rem;
+}

@@ -26,11 +26,11 @@ if (isset($_POST['logout']))
         <section>
             <a href="schemaskapare.php"> Schemaskaparen</a>
         </section>
-        <section class="form">
+    </section>
+    <section class="form">
             <form class="logout-form" action="schemaoverview.php" method="POST">
-                <input type="submit" value="Log out" name="logout"/>
+                <input class="logoutbutton" type="submit" value="Log out" name="logout"/>
             </form>
-        </section>
     </section>
 </body>
 </html>
