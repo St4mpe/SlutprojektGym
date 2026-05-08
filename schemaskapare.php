@@ -11,8 +11,9 @@
     <header>
         <h1>Schema Skaparen</h1>
     </header>
-    <section>
-        <span class="set-label" id="schedule-name">Name of Schedule</span>
+    <?php require_once("header.php"); ?>
+    <section class="schemanamn">
+        <span id="schedule-name">Name of Schedule:</span>
         <input type="text" name="scheeduleName" min="0" max="9999">
     </section>
     <section class="main">

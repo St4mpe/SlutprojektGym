@@ -42,7 +42,7 @@ async function collectWorkoutData() {
         body: json
     });
 
-    location.href = "index.php";
+    location.href = "schemaoverview.php";
 }
 
 let numExercises = 1;

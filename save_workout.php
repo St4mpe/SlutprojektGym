@@ -3,6 +3,7 @@ require 'functions.php';
 
 $json = file_get_contents('php://input');
 $data = json_decode($json, true);
+$loggedinuser = $_SESSION['loggedInUserId'];
 
 if (!$data) {
     echo json_encode(['success' => false, 'error' => 'Invalid JSON']);
@@ -12,7 +13,7 @@ if (!$data) {
 $scheduleName = mysqli_real_escape_string($conn, $data['scheduleName']);
 $jsonEscaped = mysqli_real_escape_string($conn, $json);
 
-$query = "INSERT INTO workouts (schedule_name, data) VALUES ('$scheduleName', '$jsonEscaped')";
+$query = "INSERT INTO workouts(schedule_name, data, linkeduser) VALUES ('$scheduleName', '$jsonEscaped', '$loggedinuser')";
 
 if (mysqli_query($conn, $query)) {
     echo json_encode(['success' => true, 'id' => mysqli_insert_id($conn)]);
