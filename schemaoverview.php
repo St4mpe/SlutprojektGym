@@ -11,10 +11,8 @@ if (isset($_POST['logout']))
 if (isset($_POST['tabort']))
 {
     $schemaid = $_POST['schemaid'];
-    
     $sql = "DELETE FROM workouts WHERE id = $schemaid AND linkeduser = {$_SESSION['loggedInUserId']}";
     mysqli_query($conn, $sql);
-    
     header("Location: schemaoverview.php");
     exit();
 }
