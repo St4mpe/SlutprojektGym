@@ -7,6 +7,17 @@ if (isset($_POST['logout']))
     header("Location: index.php");
     exit();
 }
+
+if (isset($_POST['tabort']))
+{
+    $schemaid = $_POST['schemaid'];
+    
+    $sql = "DELETE FROM workouts WHERE id = $schemaid AND linkeduser = {$_SESSION['loggedInUserId']}";
+    mysqli_query($conn, $sql);
+    
+    header("Location: schemaoverview.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -39,6 +50,7 @@ if (isset($_POST['logout']))
                         <?php echo $rowSchema['schedule_name']; ?>
                         <section>
                             <form class="load-form" action="schemaoverview.php" method="POST">
+                                <input type="hidden" name="schemaid" value="<?php echo $rowSchema['id']?>">
                                 <input class="ladda" type="submit" value="Ladda Schema" name="ladda"/>
                                 <input class="bort" type="submit" value="Ta Bort" name="tabort"/>
                             </form>
