@@ -59,11 +59,41 @@
     text-decoration: underline;
     margin-top: 1rem;
 }
-.load section{
+.skapadescheman{
     background: rgb(201, 201, 201);
     width: 92%;
     min-height: 400px;
     border-radius: 0.5rem;
     margin-left: auto;
     margin-right: auto;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.indischeman{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.indischeman section{
+    display: flex;
+    gap: 2rem;
+}
+.load-form{
+    display: flex;
+    gap: 2rem;
+}
+.load-form input[type="submit"]{
+    border: 0;
+    border-radius: 0.4rem;
+    padding: 0.4rem;
+}
+.ladda{
+    background: var(--darkerblue);
+    color: white;
+}
+.bort{
+    background: rgb(207, 0, 0);
+    color: white;
 }
