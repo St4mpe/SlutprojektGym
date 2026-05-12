@@ -1,10 +1,10 @@
 <?php 
 require_once("functions.php");
 
-$id     = mysqli_real_escape_string($conn, $_SESSION['laddaschemaid']);
-$sql    = "SELECT jsondata FROM workouts WHERE id = '$id'";
+$id = mysqli_real_escape_string($conn, $_SESSION['laddaschemaid']);
+$sql = "SELECT jsondata FROM workouts WHERE id = '$id'";
 $result = mysqli_query($conn, $sql);
-$row    = mysqli_fetch_assoc($result);
+$row = mysqli_fetch_assoc($result);
 ?>
 
 <!DOCTYPE html>
@@ -14,10 +14,10 @@ $row    = mysqli_fetch_assoc($result);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styleschemaskapare.css">
-    <script>
-        const workoutData = <?= $row['jsondata'] ?>;
-    </script>
     <script src="scheamtittare.js"></script>
+    <script>
+        loadSchedule(<?= $row['jsondata'] ?>);
+    </script>
 </head>
 <body>
     <header>

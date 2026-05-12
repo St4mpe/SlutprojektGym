@@ -1,3 +1,12 @@
+function loadSchedule(data) {
+    const container = document.getElementById('exercises-container');
+    const use = JSON.parse(data);
+
+    use.forEach((exercise) => {
+        container.appendChild(createExercise(exercise));
+    });
+}
+
 let numExercises = 1;
 
 function createSetRow(setNumber) {
@@ -52,7 +61,4 @@ function createExercise(i) {
 
 document.addEventListener("DOMContentLoaded", function() {
     const container = document.getElementById('exercises-container');
-    container.appendChild(createExercise(1));
-
-    console.log(workoutData);
 });
