@@ -9,7 +9,9 @@
     font-size: 3rem;
 }
 .main{
-    min-height: 100dvh;
+    min-height: 100%;
+    display: flex;
+    flex-direction: row;
 }
 .logout-form{
     width: 100%;
@@ -24,4 +26,44 @@
     border-radius: 0.7rem;
     border: 0;
     margin-bottom: 2rem;
+}
+.skapa{
+    width: 55%;
+    height: 450px;
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    align-items: center;
+    margin-top: 2.5rem;
+}
+.skapa h2{
+    text-decoration: underline;
+}
+.skapa a{
+    text-decoration: none;
+    color: white;
+    background-image: var(--bluepurplefade);
+    padding: 0.7rem 2.5rem;
+    border-radius: 0.7rem;
+    border: 0;
+    margin: 0rem 0rem 2rem;
+}
+.load{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+.load h2{
+    text-decoration: underline;
+    margin-top: 1rem;
+}
+.load section{
+    background: rgb(201, 201, 201);
+    width: 92%;
+    height: 450px;
+    border-radius: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -23,8 +23,15 @@ if (isset($_POST['logout']))
     </section>
     <?php require_once("header.php"); ?>
     <section class="main">
-        <section>
+        <section class="skapa">
+            <h2 >Skapa schema</h2>
             <a href="schemaskapare.php"> Schemaskaparen</a>
+        </section>
+        <section class="load">
+            <h2 >Ladda Schema</h2>
+            <section>
+            
+            </section>
         </section>
     </section>
     <section class="form">

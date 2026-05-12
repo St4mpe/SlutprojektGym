@@ -34,7 +34,6 @@ async function collectWorkoutData() {
     });
 
     const json = JSON.stringify(workoutData, null, 2);
-    console.log(json);
 
     const response = await fetch('save_workout.php', {
         method: 'POST',
