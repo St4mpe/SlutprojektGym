@@ -41,6 +41,8 @@ async function collectWorkoutData() {
         body: json
     });
 
+    console.log(response);
+
     location.href = "schemaoverview.php";
 }
 

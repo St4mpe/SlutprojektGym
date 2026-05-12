@@ -16,6 +16,12 @@ if (isset($_POST['tabort']))
     header("Location: schemaoverview.php");
     exit();
 }
+
+if (isset($_POST['ladda']))
+{
+    $_SESSION['laddaschemaid'] =  $_POST['schemaid'];
+    header("Location: scehamtittare.php");
+}
 ?>
 
 <!DOCTYPE html>
