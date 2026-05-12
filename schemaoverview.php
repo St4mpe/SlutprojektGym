@@ -33,7 +33,7 @@ if (isset($_POST['tabort']))
     <?php require_once("header.php"); ?>
     <section class="main">
         <section class="skapa">
-            <h2 >Skapa schema</h2>
+            <h2 >Skapa Schema</h2>
             <a href="schemaskapare.php"> Schemaskaparen</a>
         </section>
         <section class="load">

@@ -26,6 +26,7 @@
     border-radius: 0.7rem;
     border: 0;
     margin-bottom: 2rem;
+    cursor: pointer;
 }
 .skapa{
     width: 55%;
@@ -61,7 +62,7 @@
 }
 .skapadescheman{
     background: rgb(220, 220, 220);
-    box-shadow: 51px 5px 5px 0 rgb(193, 193, 193);
+    box-shadow: 5px 5px 5px 0 rgb(193, 193, 193);
     width: 92%;
     min-height: 400px;
     border-radius: 0.5rem;
@@ -93,8 +94,10 @@
 .ladda{
     background: var(--darkerblue);
     color: white;
+    cursor: pointer;
 }
 .bort{
     background: rgb(207, 0, 0);
     color: white;
+    cursor: pointer;
 }
