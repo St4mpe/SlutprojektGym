@@ -15,5 +15,14 @@ require_once("functions.php");
         <h1>Gymschema Planerare</h1>
     </section>
     <?php require_once("header.php"); ?>
+    <section class="window1">
+        <section class="text-schemaskapare">
+            <h2>Smidigt och eneklt</h2>
+            <p>Skapa dina egengjorda scheman med ett lätt och eneklt system där du lätt planerar dina kommande gympass</p>
+        </section>
+        <section class="bildschemaskapare" >
+            <img class="picbredd" src="Bilder/Skärmbild 2026-05-16 203703.png" alt="bild på schema skaparen">
+        </section>
+    </section>
 </body>
 </html>

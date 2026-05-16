@@ -175,5 +175,7 @@ header{
     .set-label{
         text-decoration: underline;
         font-size: 1.2rem;
+        text-align: center;
+        width: 100%;
     }
 }
