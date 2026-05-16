@@ -5,4 +5,6 @@
     --darkerpurple: rgb(160, 0, 160);
     --bluepurplefade: linear-gradient(to bottom right, var(--blue), var(--purple));
     --darkerbluepurplefade: linear-gradient(to bottom right, var(--darkerblue), var(--darkerpurple));
+    --lightgray: rgb(220, 220, 220);
+    --grayshadow: rgb(193, 193, 193);
 }

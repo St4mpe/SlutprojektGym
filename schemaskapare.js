@@ -1,5 +1,10 @@
 async function collectWorkoutData() {
-    const scheduleName = document.querySelector('input[name="scheeduleName"]').value || "Untitled";
+    const allInputs = document.querySelectorAll('input[required]');
+    for (const input of allInputs) {
+        if (!input.reportValidity()) return;
+    }
+
+    const scheduleName = document.querySelector('input[name="scheeduleName"]').value;
     const workoutData = {
         scheduleName: scheduleName,
         exercises: []
@@ -56,19 +61,19 @@ function createSetRow(setNumber) {
         <span class="label set-label">Set ${setNumber}</span>
         <section>
             <span class="label">Reps: </span>
-            <input class="reps" type="text" name="reps" min="1" max="999">
+            <input class="reps" type="text" name="reps" min="1" max="999" required>
         </section>
         <section>
             <span class="label">Weight (Kg): </span>
-            <input type="text" name="weight" min="0" max="9999">
+            <input type="text" name="weight" min="0" max="9999" required>
         </section>
         <section>
             <span class="label">RPE: </span>
-            <input type="text" name="rpe" min="0" max="9999">
+            <input type="text" name="rpe" min="0" max="9999" required>
         </section>
         <section>
             <span class="label">Completed: </span>
-            <input type="checkbox" name="completed" min="0" max="9999">
+            <input type="checkbox" name="completed">
         </section>
     `;
 
@@ -96,7 +101,7 @@ function createExercise(i) {
 
     section.innerHTML = `
         <section class="name-of-excersice">
-            <input class="name" type="text" name="excersice" placeholder="Excersice name" maxlength="20" pattern="[a-zA-ZåäöÅÄÖ]{1,40}">
+            <input class="name" type="text" name="excersice" placeholder="Excersice name" maxlength="20" required>
             <section class="line"></section>
         </section>
         <section class="sets-container"></section>

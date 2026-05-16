@@ -12,8 +12,10 @@
     min-height: 100%;
     display: flex;
     flex-direction: row;
+    align-items: stretch;
 }
 .logout-form{
+    margin-top: 3rem;
     width: 100%;
     display: grid;
     place-content: center;
@@ -28,15 +30,27 @@
     margin-bottom: 2rem;
     cursor: pointer;
 }
-.skapa{
+.alterativskapa{
+    min-height: 100%;
     width: 55%;
-    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+    align-self: stretch;
+}
+.skapa{
+    width: 100%;
     gap: 0.5rem;
     display: flex;
     flex-direction: column;
     align-self: flex-start;
     align-items: center;
     margin-top: 2.5rem;
+}
+.skapa:last-child{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 .skapa h2{
     text-decoration: underline;
@@ -55,16 +69,37 @@
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
+    align-self: stretch;
+}
+.load h2{
+    text-align: center;
+}
+.mallar{
+    width: 94%;
+    flex: 1;
+    background: var(--lightgray);
+    box-shadow: 5px 5px 5px 0 var(--grayshadow);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+.mallar .skapadescheman{
+    flex: unset;
+    min-height: unset;
+    width: 100%;
+    box-shadow: none;
+    padding: 0;
+    background: none;
 }
 .load h2{
     text-decoration: underline;
     margin-top: 1rem;
 }
 .skapadescheman{
-    background: rgb(220, 220, 220);
-    box-shadow: 5px 5px 5px 0 rgb(193, 193, 193);
+    background: var(--lightgray);
+    box-shadow: 5px 5px 5px 0 var(--grayshadow);
     width: 92%;
     min-height: 400px;
+    flex: 1;
     border-radius: 0.5rem;
     margin-left: auto;
     margin-right: auto;

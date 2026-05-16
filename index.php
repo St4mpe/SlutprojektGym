@@ -18,7 +18,7 @@ require_once("functions.php");
     <section class="window1">
         <section class="text-schemaskapare">
             <h2>Smidigt och eneklt</h2>
-            <p>Skapa dina egengjorda scheman med ett lätt och eneklt system där du lätt planerar dina kommande gympass</p>
+            <p>Skapa dina egengjorda scheman med ett lätt och eneklt system som är specialutvecklat för styrkelyftare</p>
         </section>
         <section class="bildschemaskapare" >
             <img class="picbredd" src="Bilder/Skärmbild 2026-05-16 203703.png" alt="bild på schema skaparen">

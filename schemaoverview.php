@@ -17,10 +17,16 @@ if (isset($_POST['tabort']))
     exit();
 }
 
-if (isset($_POST['ladda']))
+if (isset($_POST['laddaschema']))
 {
     $_SESSION['laddaschemaid'] =  $_POST['schemaid'];
     header("Location: scehamtittare.php");
+}
+
+if (isset($_POST['laddamall']))
+{
+    $_SESSION['laddaschemaid'] =  $_POST['schemaid'];
+    header("Location: mall.php");
 }
 ?>
 
@@ -38,12 +44,36 @@ if (isset($_POST['ladda']))
     </section>
     <?php require_once("header.php"); ?>
     <section class="main">
-        <section class="skapa">
-            <h2 >Skapa Schema</h2>
-            <a href="schemaskapare.php"> Schemaskaparen</a>
+        <section class="alterativskapa">
+            <section class="skapa">
+                <h2>Skapa Nytt Schema</h2>
+                <a href="schemaskapare.php">Schemaskaparen</a>
+            </section>
+            <section class="skapa">
+                <h2>Skapa Schema Från Mall</h2>
+                <section class="mallar">
+                    <section class="skapadescheman">
+                        <?php 
+                        $sqlworkout = "SELECT * FROM workouts WHERE linkeduser = {$_SESSION['loggedInUserId']}";
+                        $resultworkout = mysqli_query($conn, $sqlworkout);
+
+                        while($rowSchema = mysqli_fetch_assoc($resultworkout)): ?>
+                            <section class="indischeman">
+                                <?php echo $rowSchema['schedule_name']; ?>
+                                <section>
+                                    <form class="load-form" action="schemaoverview.php" method="POST">
+                                        <input type="hidden" name="schemaid" value="<?php echo $rowSchema['id']?>">
+                                        <input class="ladda" type="submit" value="Ladda Mall" name="laddamall"/>
+                                    </form>
+                                </section>
+                            </section>
+                        <?php endwhile; ?>
+                    </section>
+                </section>
+            </section>
         </section>
         <section class="load">
-            <h2 >Ladda Schema</h2>
+            <h2>Ladda Schema</h2>
             <section class="skapadescheman">
                 <?php 
                 $sqlworkout = "SELECT * FROM workouts WHERE linkeduser = {$_SESSION['loggedInUserId']}";
@@ -55,7 +85,7 @@ if (isset($_POST['ladda']))
                         <section>
                             <form class="load-form" action="schemaoverview.php" method="POST">
                                 <input type="hidden" name="schemaid" value="<?php echo $rowSchema['id']?>">
-                                <input class="ladda" type="submit" value="Ladda Schema" name="ladda"/>
+                                <input class="ladda" type="submit" value="Ladda Schema" name="laddaschema"/>
                                 <input class="bort" type="submit" value="Ta Bort" name="tabort"/>
                             </form>
                         </section>
@@ -65,9 +95,9 @@ if (isset($_POST['ladda']))
         </section>
     </section>
     <section class="form">
-            <form class="logout-form" action="schemaoverview.php" method="POST">
-                <input class="logoutbutton" type="submit" value="Log out" name="logout"/>
-            </form>
+        <form class="logout-form" action="schemaoverview.php" method="POST">
+            <input class="logoutbutton" type="submit" value="Log out" name="logout"/>
+        </form>
     </section>
 </body>
 </html>
