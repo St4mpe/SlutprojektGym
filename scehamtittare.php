@@ -14,6 +14,7 @@ $row = mysqli_fetch_assoc($result);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styleschemaskapare.css">
+    <link rel="stylesheet" href="schematittare.css">
     <script src="scheamtittare.js"></script>
     <script>
         const scheduleData = <?= $row['data'] ?>;
