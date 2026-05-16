@@ -1,64 +1,53 @@
-function loadSchedule(data) {
+document.addEventListener("DOMContentLoaded", function() {
     const container = document.getElementById('exercises-container');
-    const use = JSON.parse(data);
 
-    use.forEach((exercise) => {
-        container.appendChild(createExercise(exercise));
+    // scheduleData is already a parsed JS object from the PHP embed
+    document.querySelector('input[name="scheeduleName"]').value = scheduleData.scheduleName;
+
+    scheduleData.exercises.forEach((exercise) => {
+        const el = createExercise(exercise);
+        container.appendChild(el);
     });
-}
+});
 
-let numExercises = 1;
-
-function createSetRow(setNumber) {
-    const row = document.createElement('section');
-    row.className = 'set-row';
-
-    row.innerHTML = `
-        <span class="set-label">Set ${setNumber}</span>
-        <section>
-            <span class="set-label">Reps: </span>
-            <section class="reps"></section>
-        </section>
-        <section>
-            <span class="set-label">Weight (Kg): </span>
-            <section class="reps"></section>
-        </section>
-        <section>
-            <span class="set-label">RPE: </span>
-            <section class="reps"></section>
-        </section>
-        <section>
-            <span class="set-label">Completed: </span>
-            <section class="reps"></section>
-        </section>
-    `;
-
-    return row;
-}
-
-function addSet(button) {
-    const baseplate = button.closest('.baseplate');
-    const container = baseplate.querySelector('.sets-container');
-    const setNumber = container.children.length + 1;
-    container.appendChild(createSetRow(setNumber));
-}
-
-function createExercise(i) {
+function createExercise(exerciseData) {
     const section = document.createElement('section');
     section.className = 'baseplate';
 
     section.innerHTML = `
         <section class="name-of-excersice">
-            <input class="name" type="text" name="excersice" placeholder="Excersice name" maxlength="20" pattern="[a-zA-ZåäöÅÄÖ]{1,40}">
+            <input class="name" type="text" name="excersice" value="${exerciseData.name}" maxlength="20">
             <section class="line"></section>
         </section>
         <section class="sets-container"></section>`;
 
-    section.querySelector('.sets-container').appendChild(createSetRow(1));
+    const setsContainer = section.querySelector('.sets-container');
+    exerciseData.sets.forEach((set) => {
+        setsContainer.appendChild(createSetRow(set));
+    });
 
     return section;
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    const container = document.getElementById('exercises-container');
-});
+function createSetRow(setData) {
+    const row = document.createElement('section');
+    row.className = 'set-row';
+
+    row.innerHTML = `
+        <span class="set-label">Set ${setData.set}</span>
+        <section>
+            <span class="set-label">Reps: </span>
+            <span class="reps">${setData.reps}</span>
+        </section>
+        <section>
+            <span class="set-label">Weight (Kg): </span>
+            <span>${setData.weight}</span>
+        </section>
+        <section>
+            <span class="set-label">RPE: </span>
+            <span>${setData.rpe}</span>
+        </section>
+    `;
+
+    return row;
+}

@@ -13,7 +13,7 @@ if (!$data) {
 $scheduleName = mysqli_real_escape_string($conn, $data['scheduleName']);
 $jsonEscaped = mysqli_real_escape_string($conn, $json);
 
-$query = "INSERT INTO workouts(schedule_name, jsondata, linkeduser) VALUES ('$scheduleName', '$jsonEscaped', '$loggedinuser')";
+$query = "INSERT INTO workouts(schedule_name, data, linkeduser) VALUES ('$scheduleName', '$jsonEscaped', '$loggedinuser')";
 
 if (mysqli_query($conn, $query)) {
     echo json_encode(['success' => true, 'id' => mysqli_insert_id($conn)]);

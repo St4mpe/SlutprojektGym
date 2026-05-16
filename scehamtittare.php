@@ -2,7 +2,7 @@
 require_once("functions.php");
 
 $id = mysqli_real_escape_string($conn, $_SESSION['laddaschemaid']);
-$sql = "SELECT jsondata FROM workouts WHERE id = '$id'";
+$sql = "SELECT data FROM workouts WHERE id = '$id'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 ?>
@@ -16,7 +16,7 @@ $row = mysqli_fetch_assoc($result);
     <link rel="stylesheet" href="styleschemaskapare.css">
     <script src="scheamtittare.js"></script>
     <script>
-        loadSchedule(<?= $row['jsondata'] ?>);
+        const scheduleData = <?= $row['data'] ?>;
     </script>
 </head>
 <body>
