@@ -106,19 +106,19 @@ header{
 }
 .set-row {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     gap: 1.5rem;
     padding: 0.5rem 1.5rem;
 }
-
-.set-label {
+.label{
     width: 3.5rem;
     font-weight: bold;
     color: rgb(100, 100, 100);
 }
-
+.set-label{
+    text-decoration: underline;
+    font-size: 1.2rem;
+}
 .set-row input[type="text"] {
     background: none;
     border: 0;
@@ -155,4 +155,25 @@ header{
     border: 0;
     margin-bottom: 2rem;
     cursor: pointer;
+}
+
+@media (min-width: 940px) {
+    .set-row{
+        flex-direction: row;
+        align-items: center;
+    }
+    .set-label{
+        text-decoration: none;
+        font-size: 1rem;
+    }
+}
+@media (max-width: 940px) {
+    .set-row{
+        flex-direction: column;
+        align-items: left;
+    }
+    .set-label{
+        text-decoration: underline;
+        font-size: 1.2rem;
+    }
 }

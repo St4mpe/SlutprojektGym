@@ -33,21 +33,21 @@ function createSetRow(setData) {
     row.className = 'set-row';
 
     row.innerHTML = `
-        <span class="set-label">Set ${setData.set}</span>
+        <span class="label set-label">Set ${setData.set}</span>
         <section>
-            <span class="set-label">Reps: </span>
+            <span class="label">Reps: </span>
             <span class="reps">${setData.reps}</span>
         </section>
         <section>
-            <span class="set-label">Weight (Kg): </span>
+            <span class="label">Weight (Kg): </span>
             <span>${setData.weight}</span>
         </section>
         <section>
-            <span class="set-label">RPE: </span>
+            <span class="label">RPE: </span>
             <span>${setData.rpe}</span>
         </section>
         <section>
-            <span class="set-label">Completed: </span>
+            <span class="label">Completed: </span>
             <input type="checkbox" name="completed" min="0" max="9999">
         </section>
     `;
