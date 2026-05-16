@@ -141,10 +141,12 @@ header{
 }
 .save{
     width: 100%;
-    display: grid;
-    place-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
 }
-.saveButton{
+.button{
     text-decoration: none;
     color: white;
     background-image: var(--bluepurplefade);

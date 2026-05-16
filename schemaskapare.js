@@ -125,6 +125,10 @@ function removeExercise() {
     }
 }
 
+function back(){
+    location.href = "schemaoverview.php";
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     const container = document.getElementById('exercises-container');
     container.appendChild(createExercise(1));

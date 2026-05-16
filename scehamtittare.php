@@ -31,6 +31,9 @@ $row = mysqli_fetch_assoc($result);
     </section>
     <section class="main">
         <section id="exercises-container"></section>
+        <section class="tillbakaknapp">
+            <a href="schemaoverview.php">Tillbaka</a>
+        </section>
     </section>
 </body>
 </html>
