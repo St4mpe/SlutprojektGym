@@ -26,7 +26,7 @@ $row = mysqli_fetch_assoc($result);
     <?php require_once("header.php"); ?>
     <section class="schemanamn">
         <span id="schedule-name">Name of Schedule:</span>
-        <input type="text" name="scheeduleName" min="0" max="9999">
+        <span id="scheeduleName"></span>
     </section>
     <section class="main">
         <section id="exercises-container"></section>

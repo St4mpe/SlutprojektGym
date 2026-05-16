@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const container = document.getElementById('exercises-container');
 
-    // scheduleData is already a parsed JS object from the PHP embed
-    document.querySelector('input[name="scheeduleName"]').value = scheduleData.scheduleName;
+    document.getElementById('scheeduleName').textContent = scheduleData.scheduleName;
 
     scheduleData.exercises.forEach((exercise) => {
         const el = createExercise(exercise);
@@ -16,8 +15,8 @@ function createExercise(exerciseData) {
 
     section.innerHTML = `
         <section class="name-of-excersice">
-            <input class="name" type="text" name="excersice" value="${exerciseData.name}" maxlength="20">
-            <section class="line"></section>
+            <span class="name">${exerciseData.name}</span>
+            <span class="line"></span>
         </section>
         <section class="sets-container"></section>`;
 
@@ -46,6 +45,10 @@ function createSetRow(setData) {
         <section>
             <span class="set-label">RPE: </span>
             <span>${setData.rpe}</span>
+        </section>
+        <section>
+            <span class="set-label">Completed: </span>
+            <input type="checkbox" name="completed" min="0" max="9999">
         </section>
     `;
 
