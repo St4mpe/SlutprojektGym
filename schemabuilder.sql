@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 17 maj 2026 kl 12:59
+-- Tid vid skapande: 17 maj 2026 kl 17:05
 -- Serverversion: 10.4.32-MariaDB
 -- PHP-version: 8.2.12
 
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Databas: `schemabuilder`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `finishedworkouts`
+--
+
+CREATE TABLE `finishedworkouts` (
+  `id` int(11) NOT NULL,
+  `workout` text NOT NULL,
+  `completion` int(11) NOT NULL,
+  `timecompleted` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -60,12 +73,18 @@ CREATE TABLE `workouts` (
 --
 
 INSERT INTO `workouts` (`id`, `schedule_name`, `data`, `linkeduser`, `isfromemplate`) VALUES
-(77, 'PL', '{\n  \"scheduleName\": \"PL\",\n  \"exercises\": [\n    {\n      \"exercise\": 1,\n      \"name\": \"Squat\",\n      \"sets\": [\n        {\n          \"set\": 1,\n          \"reps\": \"1\",\n          \"weight\": \"1\",\n          \"rpe\": \"1\"\n        }\n      ]\n    }\n  ]\n}', 6, 0),
-(78, 'Hampus PL(från: PL)', '{\n  \"scheduleName\": \"Hampus PL(från: PL)\",\n  \"exercises\": [\n    {\n      \"exercise\": 1,\n      \"name\": \"Squat\",\n      \"sets\": [\n        {\n          \"set\": 1,\n          \"reps\": \"12\",\n          \"weight\": \"70\",\n          \"rpe\": \"-\",\n          \"completed\": false\n        }\n      ]\n    }\n  ]\n}', 6, 1);
+(87, 'Comp prep', '{\n  \"scheduleName\": \"Comp prep\",\n  \"exercises\": [\n    {\n      \"exercise\": 1,\n      \"name\": \"Squat\",\n      \"sets\": [\n        {\n          \"set\": 1,\n          \"reps\": \"1\",\n          \"weight\": \"12\",\n          \"rpe\": \"6\"\n        }\n      ]\n    }\n  ]\n}', 6, 0),
+(89, '1', '{\n  \"scheduleName\": \"1\",\n  \"exercises\": [\n    {\n      \"exercise\": 1,\n      \"name\": \"1\",\n      \"sets\": [\n        {\n          \"set\": 1,\n          \"reps\": \"1\",\n          \"weight\": \"1\",\n          \"rpe\": \"1\"\n        },\n        {\n          \"set\": 2,\n          \"reps\": \"1\",\n          \"weight\": \"1\",\n          \"rpe\": \"1\"\n        },\n        {\n          \"set\": 3,\n          \"reps\": \"1\",\n          \"weight\": \"11\",\n          \"rpe\": \"1\"\n        }\n      ]\n    }\n  ]\n}', 6, 0);
 
 --
 -- Index för dumpade tabeller
 --
+
+--
+-- Index för tabell `finishedworkouts`
+--
+ALTER TABLE `finishedworkouts`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index för tabell `userinfo`
@@ -84,6 +103,12 @@ ALTER TABLE `workouts`
 --
 
 --
+-- AUTO_INCREMENT för tabell `finishedworkouts`
+--
+ALTER TABLE `finishedworkouts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT för tabell `userinfo`
 --
 ALTER TABLE `userinfo`
@@ -93,7 +118,7 @@ ALTER TABLE `userinfo`
 -- AUTO_INCREMENT för tabell `workouts`
 --
 ALTER TABLE `workouts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
