@@ -31,3 +31,16 @@
     border-radius: 1rem;
     box-shadow: 0px 0px 12px 0 rgb(214, 214, 214);
 }
+@media (max-width: 850px) {
+    .window1{
+        flex-direction: column;
+    }
+    .text-schemaskapare{
+        width: 90%;
+    }
+    .bildschemaskapare{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
