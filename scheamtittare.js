@@ -59,11 +59,11 @@ function back(){
     location.href = "schemaoverview.php";
 }
 
-function completeWorkout(){
+async function completeWorkout(){
     const allCheckbox = document.querySelectorAll('input[type="checkbox"]');
+    const nameOfSchedule = document.getElementById("scheeduleName");
     let totalbox = 0;
     let checkedboxes = 0;
-
 
     allCheckbox.forEach((box) => {
         totalbox++;
@@ -77,7 +77,9 @@ function completeWorkout(){
 
     const response = await fetch('save_workout_stat.php', {
         method: 'POST',
-        headers: { 'Content-Type': 'text/plain' },
-        body: String(procentage)
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({procent: procentage, name: nameOfSchedule.textContent})
     });
+
+    location.href = 'kontostat.php';
 }
