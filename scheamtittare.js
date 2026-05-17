@@ -80,4 +80,4 @@ function completeWorkout(){
         headers: { 'Content-Type': 'text/plain' },
         body: String(procentage)
     });
-};
+}
