@@ -78,6 +78,6 @@ function completeWorkout(){
     const response = await fetch('save_workout_stat.php', {
         method: 'POST',
         headers: { 'Content-Type': 'text/plain' },
-        body: procentage
+        body: String(procentage)
     });
 };
