@@ -75,5 +75,9 @@ function completeWorkout(){
 
     let procentage = Math.round((checkedboxes / totalbox) * 100);
 
-    console.log(procentage);
+    const response = await fetch('save_workout_stat.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain' },
+        body: procentage
+    });
 };
