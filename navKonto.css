@@ -1,0 +1,18 @@
+.navKonto{
+    display: flex;
+    flex-direction: row;
+    place-content: center;
+    gap: 5rem;
+    background: rgb(228, 228, 228);
+    width: 25%;
+    margin: 1rem auto 0rem auto;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+.navKonto a{
+    text-decoration: none;
+    color: black;
+}
+.navKonto a.gra {
+    text-decoration: underline;
+}

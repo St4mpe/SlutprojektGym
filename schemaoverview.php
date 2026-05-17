@@ -43,12 +43,17 @@ if (isset($_POST['redigeramall']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="schemaoverviewstyle.css">
+    <link rel="stylesheet" href="navKonto.css">
 </head>
 <body>
     <section class="headername">
         <h1>Konto</h1>
     </section>
     <?php require_once("header.php"); ?>
+    <section class="navKonto">
+        <a class="gra" href="schemaoverview.php">Skapa</a>
+        <a href="kontostat.php">Statistik</a>
+    </section>
     <section class="main">
         <section class="alterativskapa">
             <section class="skapa">
