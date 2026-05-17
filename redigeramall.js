@@ -18,7 +18,12 @@ function createExercise(exerciseData) {
             <span class="name">${exerciseData.name}</span>
             <span class="line"></span>
         </section>
-        <section class="sets-container"></section>`;
+        <section class="sets-container"></section>
+        <section class="exercise-buttons">
+            <button class="formbutton" type="button" onclick="addSet(this)">Add set</button>
+            <button class="formbutton" type="button" onclick="removeSet(this)">Remove set</button>
+        </section>
+        `;
 
     const setsContainer = section.querySelector('.sets-container');
     exerciseData.sets.forEach((set) => {
@@ -57,7 +62,7 @@ async function collectWorkoutData() {
         if (!input.reportValidity()) return;
     }
 
-    const scheduleName = document.getElementById('scheeduleName').value + "(från: " + scheduleData.scheduleName + ")" || "Untitled";
+    const scheduleName = document.getElementById('scheeduleName').value || "Untitled";
     const workoutData = {
         scheduleName: scheduleName,
         exercises: []
@@ -102,6 +107,21 @@ async function collectWorkoutData() {
     console.log(response);
 
     location.href = "schemaoverview.php";
+}
+
+function addSet(button) {
+    const baseplate = button.closest('.baseplate');
+    const container = baseplate.querySelector('.sets-container');
+    const setNumber = container.children.length + 1;
+    container.appendChild(createSetRow({ set: setNumber }));
+}
+
+function removeSet(button) {
+    const baseplate = button.closest('.baseplate');
+    const container = baseplate.querySelector('.sets-container');
+    if (container.children.length > 0) {
+        container.removeChild(container.lastElementChild);
+    }
 }
 
 function back(){

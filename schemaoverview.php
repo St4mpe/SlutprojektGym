@@ -28,6 +28,12 @@ if (isset($_POST['laddamall']))
     $_SESSION['laddaschemaid'] =  $_POST['schemaid'];
     header("Location: mall.php");
 }
+
+if (isset($_POST['redigeramall']))
+{
+    $_SESSION['laddaschemaid'] =  $_POST['schemaid'];
+    header("Location: redigeramall.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +69,8 @@ if (isset($_POST['laddamall']))
                                 <section>
                                     <form class="load-form" action="schemaoverview.php" method="POST">
                                         <input type="hidden" name="schemaid" value="<?php echo $rowSchema['id']?>">
-                                        <input class="ladda" type="submit" value="Ladda Mall" name="laddamall"/>
+                                        <input class="ladda" type="submit" value="Ladda redigerbar mall" name="redigeramall"/>
+                                        <input class="ladda" type="submit" value="Ladda Statisk Mall" name="laddamall"/>
                                     </form>
                                 </section>
                             </section>
