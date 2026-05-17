@@ -5,6 +5,8 @@ $id = mysqli_real_escape_string($conn, $_SESSION['laddaschemaid']);
 $sql = "SELECT data FROM workouts WHERE id = '$id'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
+
+$_SESSION['isTemplate'] = 0;
 ?>
 
 <!DOCTYPE html>

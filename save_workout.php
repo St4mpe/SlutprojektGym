@@ -13,7 +13,8 @@ if (!$data) {
 $scheduleName = mysqli_real_escape_string($conn, $data['scheduleName']);
 $jsonEscaped = mysqli_real_escape_string($conn, $json);
 
-$query = "INSERT INTO workouts(schedule_name, data, linkeduser, istemplate) VALUES ('$scheduleName', '$jsonEscaped', '$loggedinuser', 1)";
+$templatecheck = $_SESSION['isTemplate'];
+$query = "INSERT INTO workouts(schedule_name, data, linkeduser, istemplate) VALUES ('$scheduleName', '$jsonEscaped', '$loggedinuser', '$templatecheck')";
 
 if (mysqli_query($conn, $query)) {
     echo json_encode(['success' => true, 'id' => mysqli_insert_id($conn)]);
