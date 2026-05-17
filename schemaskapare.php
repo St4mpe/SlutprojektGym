@@ -1,5 +1,7 @@
 <?php 
 require_once("functions.php");
+
+$_SESSION['IsTemplate'] = 0;
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -61,7 +61,7 @@ async function collectWorkoutData() {
         if (!input.reportValidity()) return;
     }
 
-    const scheduleName = document.getElementById('scheeduleName').textContent || "Untitled";
+    const scheduleName = document.getElementById('scheeduleName').value + "(från: " + scheduleData.scheduleName + ")" || "Untitled";
     const workoutData = {
         scheduleName: scheduleName,
         exercises: []
