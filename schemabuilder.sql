@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 08 maj 2026 kl 12:30
+-- Tid vid skapande: 17 maj 2026 kl 12:59
 -- Serverversion: 10.4.32-MariaDB
 -- PHP-version: 8.2.12
 
@@ -51,9 +51,17 @@ CREATE TABLE `workouts` (
   `id` int(11) NOT NULL,
   `schedule_name` varchar(255) NOT NULL,
   `data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`data`)),
-  `created_time` timestamp NOT NULL DEFAULT current_timestamp(),
-  `linkeduser` int(11) NOT NULL
+  `linkeduser` int(11) NOT NULL,
+  `isfromemplate` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumpning av Data i tabell `workouts`
+--
+
+INSERT INTO `workouts` (`id`, `schedule_name`, `data`, `linkeduser`, `isfromemplate`) VALUES
+(77, 'PL', '{\n  \"scheduleName\": \"PL\",\n  \"exercises\": [\n    {\n      \"exercise\": 1,\n      \"name\": \"Squat\",\n      \"sets\": [\n        {\n          \"set\": 1,\n          \"reps\": \"1\",\n          \"weight\": \"1\",\n          \"rpe\": \"1\"\n        }\n      ]\n    }\n  ]\n}', 6, 0),
+(78, 'Hampus PL(från: PL)', '{\n  \"scheduleName\": \"Hampus PL(från: PL)\",\n  \"exercises\": [\n    {\n      \"exercise\": 1,\n      \"name\": \"Squat\",\n      \"sets\": [\n        {\n          \"set\": 1,\n          \"reps\": \"12\",\n          \"weight\": \"70\",\n          \"rpe\": \"-\",\n          \"completed\": false\n        }\n      ]\n    }\n  ]\n}', 6, 1);
 
 --
 -- Index för dumpade tabeller
@@ -79,13 +87,13 @@ ALTER TABLE `workouts`
 -- AUTO_INCREMENT för tabell `userinfo`
 --
 ALTER TABLE `userinfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT för tabell `workouts`
 --
 ALTER TABLE `workouts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
