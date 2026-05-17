@@ -54,3 +54,26 @@ function createSetRow(setData) {
 
     return row;
 }
+
+function back(){
+    location.href = "schemaoverview.php";
+}
+
+function completeWorkout(){
+    const allCheckbox = document.querySelectorAll('input[type="checkbox"]');
+    let totalbox = 0;
+    let checkedboxes = 0;
+
+
+    allCheckbox.forEach((box) => {
+        totalbox++;
+        if (box.checked)
+        {
+            checkedboxes++;
+        }
+    });
+
+    let procentage = Math.round((checkedboxes / totalbox) * 100);
+
+    console.log(procentage);
+};

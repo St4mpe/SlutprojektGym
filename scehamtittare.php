@@ -5,11 +5,6 @@ $id = mysqli_real_escape_string($conn, $_SESSION['laddaschemaid']);
 $sql = "SELECT data FROM workouts WHERE id = '$id'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
-
-if (isset($_POST['tillbaka']))
-{
-    header("Location: schemaoverview.php");
-}
 ?>
 
 <!DOCTYPE html>
@@ -36,10 +31,10 @@ if (isset($_POST['tillbaka']))
     </section>
     <section class="main">
         <section id="exercises-container"></section>
-        <form class="tillbakaknapp" action="scehamtittare.php" method="POST">
-            <input type="submit" value="Tillbaka" name="tillbaka"/>
-            <input type="submit" value="Markera som klar" name="klar"/>
-        </form>
+        <section class="save">
+            <button class="button" type="button" onclick="back()">Tillbaka</button>  
+            <button class="button" type="button" onclick="completeWorkout()">Save Workout</button>
+        </section>
     </section>
 </body>
 </html>
