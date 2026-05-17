@@ -1,7 +1,7 @@
 <?php 
 require_once("functions.php");
 
-$_SESSION['isTemplate'] = 1;
+$_SESSION['isFromTemplate'] = 0;
 ?>
 <!DOCTYPE html>
 <html lang="en">

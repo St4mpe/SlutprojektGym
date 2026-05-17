@@ -6,7 +6,7 @@ $sql = "SELECT data FROM workouts WHERE id = '$id'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 
-$_SESSION['isTemplate'] = 0;
+$_SESSION['isFromTemplate'] = 1;
 ?>
 
 <!DOCTYPE html>

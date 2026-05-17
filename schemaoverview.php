@@ -54,7 +54,7 @@ if (isset($_POST['laddamall']))
                 <section class="mallar">
                     <section class="skapadescheman">
                         <?php 
-                        $sqlworkout = "SELECT * FROM workouts WHERE linkeduser = {$_SESSION['loggedInUserId']} AND istemplate = 1";
+                        $sqlworkout = "SELECT * FROM workouts WHERE linkeduser = {$_SESSION['loggedInUserId']} AND isfromemplate = 0";
                         $resultworkout = mysqli_query($conn, $sqlworkout);
 
                         while($rowSchema = mysqli_fetch_assoc($resultworkout)): ?>

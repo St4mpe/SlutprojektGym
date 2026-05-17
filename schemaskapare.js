@@ -71,10 +71,6 @@ function createSetRow(setNumber) {
             <span class="label">RPE: </span>
             <input type="text" name="rpe" min="0" max="9999" required>
         </section>
-        <section>
-            <span class="label">Completed: </span>
-            <input type="checkbox" name="completed">
-        </section>
     `;
 
     return row;

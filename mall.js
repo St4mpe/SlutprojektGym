@@ -46,10 +46,6 @@ function createSetRow(setData) {
             <span class="label">RPE: </span>
             <input type="text" name="rpe" min="0" max="9999" required>
         </section>
-        <section>
-            <span class="label">Completed: </span>
-            <input type="checkbox" name="completed">
-        </section>
     `;
 
     return row;
@@ -79,7 +75,6 @@ async function collectWorkoutData() {
             const reps = row.querySelector('input[name="reps"]').value;
             const weight = row.querySelector('input[name="weight"]').value;
             const rpe = row.querySelector('input[name="rpe"]').value;
-            const completed = row.querySelector('input[name="completed"]').checked;
 
             sets.push({
                 set: setIndex + 1,

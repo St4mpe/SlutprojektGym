@@ -166,6 +166,10 @@ header{
         text-decoration: none;
         font-size: 1rem;
     }
+
+    .name-of-excersice{
+        text-align: left;
+    }
 }
 @media (max-width: 940px) {
     .set-row{
@@ -177,5 +181,8 @@ header{
         font-size: 1.2rem;
         text-align: center;
         width: 100%;
+    }
+    .name-of-excersice{
+        text-align: center;
     }
 }
