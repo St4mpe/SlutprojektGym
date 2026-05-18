@@ -46,10 +46,18 @@ if(isset($_POST['radera']))
                 <p><?php echo $date->format('Y-m-d');?></p>
                 <form action="historik.php" method="POST">
                     <input type="hidden" name="id" value="<?php echo $row['id']?>">
-                    <input type="submit" name="radera" value="Radera">
+                    <input class="button" type="submit" name="radera" value="Radera">
                 </form>
             </section>
-        <?php endwhile; ?>
+        <?php endwhile; 
+        if(mysqli_num_rows($result) == 0)
+        {?>
+            <section class="listoutputtom">
+                <p>Du har inte loggat några pass än</p>
+            </section>
+        <?php
+        }
+        ?>
     </section>
     <section class="tillbakabutton" >
         <a href="kontostat.php">Tillbaka</a>

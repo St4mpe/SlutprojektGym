@@ -132,7 +132,7 @@
     cursor: pointer;
 }
 .bort{
-    background: rgb(207, 0, 0);
+    background: var(--red);
     color: white;
     cursor: pointer;
 }

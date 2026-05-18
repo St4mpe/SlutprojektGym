@@ -40,8 +40,18 @@
 .listoutput:nth-child(even){
     background-color: var(--darkgray);
 }
+.listoutputtom{
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 1.1rem;
+}
 .button{
-    padding: 0.1rem 0.3rem;
+    padding: 0.2rem 0.5rem;
+    border: none;
+    background: var(--red);
+    cursor: pointer;
+    color: white;
+    border-radius: 0.25rem;
 }
 .tillbakabutton{
     display: flex;
