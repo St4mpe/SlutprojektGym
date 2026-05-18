@@ -4,6 +4,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+    --height: 20px;
+    --progressfill: 25%;
+}
 .headername{
     width: 100%;
     text-align: center;
@@ -17,4 +21,15 @@
     display: flex;
     flex-direction: row;
     align-items: stretch;
+}
+.background{
+    background: gray;
+    width: 80%;
+    height: var(--height);
+    margin: 0rem auto 0rem auto 
+}
+.bar-bg{
+    background: green;
+    height: var(--height);
+    width: var(--progressfill);
 }
