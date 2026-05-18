@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 17 maj 2026 kl 17:37
+-- Tid vid skapande: 18 maj 2026 kl 23:56
 -- Serverversion: 10.4.32-MariaDB
 -- PHP-version: 8.2.12
 
@@ -31,15 +31,16 @@ CREATE TABLE `finishedworkouts` (
   `id` int(11) NOT NULL,
   `workout` text NOT NULL,
   `completion` int(11) NOT NULL,
-  `timecompleted` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `timecompleted` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `linkeduser` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumpning av Data i tabell `finishedworkouts`
 --
 
-INSERT INTO `finishedworkouts` (`id`, `workout`, `completion`, `timecompleted`) VALUES
-(2, '67', 1, '2026-05-17 15:36:54');
+INSERT INTO `finishedworkouts` (`id`, `workout`, `completion`, `timecompleted`, `linkeduser`) VALUES
+(14, '1', 33, '2026-05-18 21:55:45', 6);
 
 -- --------------------------------------------------------
 
@@ -113,7 +114,7 @@ ALTER TABLE `workouts`
 -- AUTO_INCREMENT för tabell `finishedworkouts`
 --
 ALTER TABLE `finishedworkouts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT för tabell `userinfo`
