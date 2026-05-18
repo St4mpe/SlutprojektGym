@@ -3,6 +3,16 @@ require_once("functions.php");
 
 $sql = "SELECT * FROM finishedworkouts WHERE linkeduser = {$_SESSION['loggedInUserId']}";
 $result = mysqli_query($conn, $sql);
+
+if(isset($_POST['radera']))
+{
+    $schemaid = $_POST['id'];
+    $sql = "DELETE FROM finishedworkouts WHERE id = $schemaid AND linkeduser = {$_SESSION['loggedInUserId']}";
+    mysqli_query($conn, $sql);
+    header("Location: historik.php");
+    exit();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +44,10 @@ $result = mysqli_query($conn, $sql);
                 <p><?php echo $row['workout'] ?></p>
                 <p><?php echo $row['completion'] ?>%</p>
                 <p><?php echo $date->format('Y-m-d');?></p>
-                <button class="button" type="button">Radera</button>
+                <form action="historik.php" method="POST">
+                    <input type="hidden" name="id" value="<?php echo $row['id']?>">
+                    <input type="submit" name="radera" value="Radera">
+                </form>
             </section>
         <?php endwhile; ?>
     </section>
