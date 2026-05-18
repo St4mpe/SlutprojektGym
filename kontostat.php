@@ -47,10 +47,18 @@ while($row = mysqli_fetch_assoc($result)) {
             <section class="avklarepasslista">
                 <?php 
                     $sqlworkouts = "SELECT * FROM finishedworkouts WHERE linkeduser = {$_SESSION['loggedInUserId']}"; 
-                    $resultworkouts = mysqli_query($conn, $sqlworkouts);
-                    while($row = mysqli_fetch_assoc($resultworkouts)):?>
-                    <section>
+                    $resultworkouts = mysqli_query($conn, $sqlworkouts);?>
+                    <section class="listoutput">
+                        <p><u>Namn:</u></p>
+                        <P><u>Datum:</u></P>
+                    </section>
+                    <?php
+                    while($row = mysqli_fetch_assoc($resultworkouts)):
+                        $date = new DateTime($row['timecompleted']);?>
+                    <section class="listoutput">
                         <p><?php echo $row['workout'] ?></p>
+                        <p><?php echo $row['completion'] ?></p>
+                        <p><?php echo $date->format('Y-m-d');?></p>
                     </section>
                     <?php endwhile; ?>
             </section>
