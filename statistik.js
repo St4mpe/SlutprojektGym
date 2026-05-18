@@ -12,6 +12,9 @@ function avrageCompletion()
         totalprocent = totalprocent + number;
         
     });
-    let avrageprocentage = totalprocent / totalnumber;
-    console.log(avrageprocentage)
+    let avrageprocentage = Math.round(totalprocent / totalnumber);
+    document.documentElement.style.setProperty('--progressfill', avrageprocentage+"%");
+
+    const i = document.getElementById("avg-fill");
+    i.innerHTML= avrageprocentage.toString() + "%";
 }

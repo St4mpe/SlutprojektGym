@@ -5,8 +5,11 @@
     box-sizing: border-box;
 }
 :root{
-    --height: 20px;
+    --height: 25px;
     --progressfill: 25%;
+}
+body{
+    height: 100dvh;
 }
 .headername{
     width: 100%;
@@ -22,14 +25,52 @@
     flex-direction: row;
     align-items: stretch;
 }
-.background{
-    background: gray;
-    width: 80%;
-    height: var(--height);
-    margin: 0rem auto 0rem auto 
+.statruta{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
 }
-.bar-bg{
-    background: green;
+.avg-bar{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: var(--lightgray);
+    padding: 2rem 2.5rem;
+    margin-left: 4rem;
+    margin-top: 2rem;
+    border-radius: 0.7rem;
+    box-shadow: 5px 5px 5px 0 var(--grayshadow);
+}
+.avg-bar h2{
+    text-decoration: underline;
+}
+.background-fill{
+    background: gray;
+    width: 100%;
+    height: var(--height);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.5rem;
+}
+.avg-bar-fill{
+    background: var(--purple);
     height: var(--height);
     width: var(--progressfill);
+    border-radius: 0.5rem 0.2rem 0.2rem 0.5rem;
+}
+.avklaradepass{
+    width: 35%;
+    min-height: 400px;
+    background: var(--lightgray);
+    margin-right: 4rem;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 5px 5px 5px 0 var(--grayshadow);
+    padding: 1.5rem 2.5rem;
+}
+.avklaradepass h2{
+    text-decoration: underline;
+    text-align: center;
 }

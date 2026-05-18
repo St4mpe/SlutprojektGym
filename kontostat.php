@@ -31,11 +31,20 @@ while($row = mysqli_fetch_assoc($result)) {
         <a href="schemaoverview.php">Skapa</a>
         <a class="gra" href="kontostat.php">Statistik</a>
     </section>
-    <section>
-        <section class="background">
-            <section class="bar-bg">
-                <section class="bar-fill" style="width:25%;"></section>
+    <section class="statruta">
+        <section class="avg-bar">
+            <h2>Genomsnittligt Genomförande</h2>
+            <section>
+                <p id="avg-fill"></p>
+                <section class="background-fill">
+                    <section class="bar-bg">
+                        <section class="avg-bar-fill"></section>
+                    </section>
+                </section>
             </section>
+        </section>
+        <section class="avklaradepass">
+            <h2>Avklaradepass</h2>
         </section>
     </section>
 </body>
