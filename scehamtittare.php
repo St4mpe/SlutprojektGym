@@ -33,7 +33,7 @@ $row = mysqli_fetch_assoc($result);
         <section id="exercises-container"></section>
         <section class="save">
             <button class="button" type="button" onclick="back()">Tillbaka</button>  
-            <button class="button" type="button" onclick="completeWorkout()">Save Workout</button>
+            <button class="button" type="button" onclick="completeWorkout()">Avsluta Pass</button>
         </section>
     </section>
 </body>
