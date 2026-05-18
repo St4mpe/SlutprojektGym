@@ -1,7 +1,6 @@
 <?php 
 require_once("functions.php");
 
-$id = mysqli_real_escape_string($conn, $_SESSION['laddaschemaid']);
 $sql = "SELECT completion FROM finishedworkouts WHERE linkeduser = {$_SESSION['loggedInUserId']}";
 $result = mysqli_query($conn, $sql);
 $rows = [];
@@ -45,6 +44,16 @@ while($row = mysqli_fetch_assoc($result)) {
         </section>
         <section class="avklaradepass">
             <h2>Avklaradepass</h2>
+            <section class="avklarepasslista">
+                <?php 
+                    $sqlworkouts = "SELECT * FROM finishedworkouts WHERE linkeduser = {$_SESSION['loggedInUserId']}"; 
+                    $resultworkouts = mysqli_query($conn, $sqlworkouts);
+                    while($row = mysqli_fetch_assoc($resultworkouts)):?>
+                    <section>
+                        <p><?php echo $row['workout'] ?></p>
+                    </section>
+                    <?php endwhile; ?>
+            </section>
         </section>
     </section>
 </body>
