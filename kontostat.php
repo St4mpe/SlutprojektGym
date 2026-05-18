@@ -41,6 +41,7 @@ while($row = mysqli_fetch_assoc($result)) {
                     </section>
                 </section>
             </section>
+            <section class="circle"></section>
         </section>
         <section class="avklaradepass">
             <h2>Avklaradepass</h2>
@@ -49,7 +50,8 @@ while($row = mysqli_fetch_assoc($result)) {
                     $sqlworkouts = "SELECT * FROM finishedworkouts WHERE linkeduser = {$_SESSION['loggedInUserId']}"; 
                     $resultworkouts = mysqli_query($conn, $sqlworkouts);?>
                     <section class="listoutput">
-                        <p><u>Namn:</u></p>
+                        <p><u>Schema:</u></p>
+                        <p><u>Procent:</u></p>
                         <P><u>Datum:</u></P>
                     </section>
                     <?php
@@ -57,10 +59,13 @@ while($row = mysqli_fetch_assoc($result)) {
                         $date = new DateTime($row['timecompleted']);?>
                     <section class="listoutput">
                         <p><?php echo $row['workout'] ?></p>
-                        <p><?php echo $row['completion'] ?></p>
+                        <p><?php echo $row['completion'] ?>%</p>
                         <p><?php echo $date->format('Y-m-d');?></p>
                     </section>
                     <?php endwhile; ?>
+                    <section class="historikknapp">
+                        <a href="historik.php">Se Historik</a>
+                    </section>
             </section>
         </section>
     </section>
