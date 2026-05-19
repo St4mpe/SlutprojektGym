@@ -1,12 +1,32 @@
 <?php 
 require_once("functions.php");
 
+/* Genomsnittlit genomförande */
 $sql = "SELECT completion FROM finishedworkouts WHERE linkeduser = {$_SESSION['loggedInUserId']}";
 $result = mysqli_query($conn, $sql);
 $rows = [];
 while($row = mysqli_fetch_assoc($result)) {
     $rows[] = $row['completion'];
 }
+
+/* Cirkel Avklarade pass av de skapade*/
+$sqlWorkouts = "SELECT * FROM workouts WHERE linkeduser = {$_SESSION['loggedInUserId']}";
+$resultW = mysqli_query($conn, $sqlWorkouts);
+$NOEW=0;
+while($row = mysqli_fetch_assoc($resultW)) {
+    $NOEW++;
+}
+
+$sqlCompleted = "SELECT * FROM workouts WHERE linkeduser = {$_SESSION['loggedInUserId']} AND completed=1";
+$resultC = mysqli_query($conn, $sqlCompleted);
+$NOEC=0;
+while($row = mysqli_fetch_assoc($resultC)) {
+    $NOEC++;
+}
+
+$procentage = round(($NOEC / $NOEW) * 100);    
+echo $procentage;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,17 +54,25 @@ while($row = mysqli_fetch_assoc($result)) {
         <section class="avg-bar">
             <h2>Genomsnittligt Genomförande</h2>
             <section>
-                <p id="avg-fill"></p>
+                <p id="avg-fill">0%</p>
                 <section class="background-fill">
                     <section class="bar-bg">
                         <section class="avg-bar-fill"></section>
                     </section>
                 </section>
             </section>
-            <section class="circle"></section>
+            <section class="circleProgress">
+                <section class="centerHeader">
+                    <h2>Avlsutade pass av de skapade:</h2>
+                </section>
+                <section class="circle-wrapper">
+                    <section class="circle" style="--progress: <?php echo $procentage; ?>%"></section>
+                    <span data-progress="<?php echo $procentage; ?>%">Totalt</span>
+                </section>
+            </section>
         </section>
         <section class="avklaradepass">
-            <h2>Avklaradepass</h2>
+            <h2>Genomförda pass</h2>
             <section class="avklarepasslista">
                 <?php 
                     $sqlworkouts = "SELECT * FROM finishedworkouts WHERE linkeduser = {$_SESSION['loggedInUserId']}"; 

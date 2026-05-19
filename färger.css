@@ -1,6 +1,7 @@
 :root{
     --blue: rgb(0, 0, 255);
     --darkerblue: rgb(0, 0, 173);
+    --lightblue: rgb(0, 157, 255);
     --pink: rgb(235, 0, 235);
     --purple: rgb(178, 0, 178);
     --darkerpurple: rgb(160, 0, 160);
@@ -9,5 +10,6 @@
     --lightgray: rgb(234, 234, 234);
     --darkgray: rgb(205, 205, 205);
     --grayshadow: rgb(193, 193, 193);
-    --reddelete: rgb(221, 0, 0);
+    --progressbargray: rgb(156, 156, 156);
+    --red: rgb(221, 0, 0);
 }

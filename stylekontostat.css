@@ -47,7 +47,7 @@ body{
     text-decoration: underline;
 }
 .background-fill{
-    background: gray;
+    background:  var(--progressbargray);
     width: 100%;
     height: var(--height);
     margin-left: auto;
@@ -109,4 +109,45 @@ body{
     text-decoration: none;
     color: white;
     text-align: center;
+}
+.circleProgress{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    margin: 3rem auto 0rem auto;
+}
+.centerHeader{
+    display: grid;
+    place-content: center;
+}
+.circle-wrapper {
+  position: relative;
+  width: 160px;
+  aspect-ratio: 1;
+  justify-self: center;
+  display: grid;
+  place-items: center;
+}
+.circle {
+  --progress: 0%;
+
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(var(--lightblue) var(--progress), var(--progressbargray) 0);
+  mask: radial-gradient(circle, transparent 45%, black 46%);
+}
+.circle-wrapper span {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  place-content: center;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 1.2rem;
+  color: black;
+  z-index: 1;
+}
+.circle-wrapper span::after {
+  content: attr(data-progress);
 }
