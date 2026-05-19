@@ -50,9 +50,10 @@ echo $procentage;
         <a href="schemaoverview.php">Skapa</a>
         <a class="gra" href="kontostat.php">Statistik</a>
     </section>
-    <section class="statruta">
-        <section class="avg-bar">
-            <section class="bars">
+<section class="statruta">
+    <section class="vänster-kolumn">
+        <section class="progressbars">
+            <section class="avg-bar">
                 <h2>Genomsnittligt Genomförande</h2>
                 <section>
                     <p id="avg-fill">0%</p>
@@ -73,31 +74,35 @@ echo $procentage;
                 </section>
             </section>
         </section>
-        <section class="avklaradepass">
-            <h2>Genomförda pass</h2>
-            <section class="avklarepasslista">
-                <?php 
-                    $sqlworkouts = "SELECT * FROM finishedworkouts WHERE linkeduser = {$_SESSION['loggedInUserId']}"; 
-                    $resultworkouts = mysqli_query($conn, $sqlworkouts);?>
-                    <section class="listoutput">
-                        <p><u>Schema:</u></p>
-                        <p><u>Procent:</u></p>
-                        <P><u>Datum:</u></P>
-                    </section>
-                    <?php
-                    while($row = mysqli_fetch_assoc($resultworkouts)):
-                        $date = new DateTime($row['timecompleted']);?>
-                    <section class="listoutput">
-                        <p><?php echo $row['workout'] ?></p>
-                        <p><?php echo $row['completion'] ?>%</p>
-                        <p><?php echo $date->format('Y-m-d');?></p>
-                    </section>
-                    <?php endwhile; ?>
-                    <section class="historikknapp">
-                        <a href="historik.php">Se Historik</a>
-                    </section>
-            </section>
+        <section class="extra-ruta">
+            
         </section>
     </section>
+    <section class="avklaradepass">
+        <h2>Genomförda pass</h2>
+        <section class="avklarepasslista">
+            <?php 
+                $sqlworkouts = "SELECT * FROM finishedworkouts WHERE linkeduser = {$_SESSION['loggedInUserId']}"; 
+                $resultworkouts = mysqli_query($conn, $sqlworkouts);?>
+                <section class="listoutput">
+                    <p><u>Schema:</u></p>
+                    <p><u>Procent:</u></p>
+                    <P><u>Datum:</u></P>
+                </section>
+                <?php
+                while($row = mysqli_fetch_assoc($resultworkouts)):
+                    $date = new DateTime($row['timecompleted']);?>
+                <section class="listoutput">
+                    <p><?php echo $row['workout'] ?></p>
+                    <p><?php echo $row['completion'] ?>%</p>
+                    <p><?php echo $date->format('Y-m-d');?></p>
+                </section>
+                <?php endwhile; ?>
+                <section class="historikknapp">
+                    <a href="historik.php">Se Historik</a>
+                </section>
+        </section>
+    </section>
+</section>
 </body>
 </html>
