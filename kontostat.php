@@ -52,12 +52,14 @@ echo $procentage;
     </section>
     <section class="statruta">
         <section class="avg-bar">
-            <h2>Genomsnittligt Genomförande</h2>
-            <section>
-                <p id="avg-fill">0%</p>
-                <section class="background-fill">
-                    <section class="bar-bg">
-                        <section class="avg-bar-fill"></section>
+            <section class="bars">
+                <h2>Genomsnittligt Genomförande</h2>
+                <section>
+                    <p id="avg-fill">0%</p>
+                    <section class="background-fill">
+                        <section class="bar-bg">
+                            <section class="avg-bar-fill"></section>
+                        </section>
                     </section>
                 </section>
             </section>
