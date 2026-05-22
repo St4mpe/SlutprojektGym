@@ -1,7 +1,6 @@
 <?php 
 require_once("functions.php");
 
-/* Genomsnittlit genomförande */
 $sql = "SELECT completion FROM finishedworkouts WHERE linkeduser = {$_SESSION['loggedInUserId']}";
 $result = mysqli_query($conn, $sql);
 $rows = [];
@@ -9,7 +8,6 @@ while($row = mysqli_fetch_assoc($result)) {
     $rows[] = $row['completion'];
 }
 
-/* Cirkel Avklarade pass av de skapade*/
 $sqlWorkouts = "SELECT * FROM workouts WHERE linkeduser = {$_SESSION['loggedInUserId']}";
 $resultW = mysqli_query($conn, $sqlWorkouts);
 $NOEW=0;
@@ -23,6 +21,7 @@ $NOEC=0;
 while($row = mysqli_fetch_assoc($resultC)) {
     $NOEC++;
 }
+
 
 $procentage = round(($NOEC / $NOEW) * 100);    
 echo $procentage;
