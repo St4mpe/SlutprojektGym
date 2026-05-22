@@ -110,6 +110,7 @@ async function completeWorkout(){
     
     for (const e of excersiceData.exercise) {
         const specifikExcercise = e.exerciseName;
+        const sets = e.sets;
 
         const responseExName = await fetch('excerciseCheck.php', {
             method: 'POST',
@@ -117,7 +118,18 @@ async function completeWorkout(){
             body: JSON.stringify({ name: specifikExcercise })
         });
 
-        const result = await responseExName.json(); // läs svaret från PHP
-        console.log(result);
+        const result = JSON.stringify(await responseExName.json());
+        if (result == "false")
+        {
+            const responseExName = await fetch('excerciseNewStat.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: specifikExcercise, sets: sets})
+            });
+        }
+        else if (result == "true")
+        {
+            console.log("insert");
+        }
     }
 }
