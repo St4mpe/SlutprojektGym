@@ -84,6 +84,7 @@ async function completeWorkout(){
     //1. For each .name-of-excerise för att få ut alla 
     //2. Sen For each input[type="checkbox"] för att kolla hur många avklarade sets
     //3. Göra en json-fil där övningen står först och sen avklarade sets
+
     //4. Kolla ifall övningen redan finns med rätt linked user annars skapa en ny rad för varje övning
     //5. Ifall den redan finns ska den ta det gamla antelet sets och plussa med det nya
     //6. Lägga in det in tabellen completedexcersices där det länkas till ett userid
@@ -104,8 +105,19 @@ async function completeWorkout(){
             }
         })
 
-        excersiceData.exercise.push({exercise: exToJSON.textContent, sets: numSets});
+        excersiceData.exercise.push({exerciseName: exToJSON.textContent, sets: numSets});
     })
     
-    console.log(excersiceData);
+    for (const e of excersiceData.exercise) {
+        const specifikExcercise = e.exerciseName;
+
+        const responseExName = await fetch('excerciseCheck.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: specifikExcercise })
+        });
+
+        const result = await responseExName.json(); // läs svaret från PHP
+        console.log(result);
+    }
 }
