@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 20 maj 2026 kl 11:14
+-- Tid vid skapande: 24 maj 2026 kl 12:52
 -- Serverversion: 10.4.32-MariaDB
 -- PHP-version: 8.2.12
 
@@ -24,6 +24,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Tabellstruktur `excercisescompleted`
+--
+
+CREATE TABLE `excercisescompleted` (
+  `id` int(11) NOT NULL,
+  `namn` text NOT NULL,
+  `antal` int(11) NOT NULL,
+  `linkeduser` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Tabellstruktur `finishedworkouts`
 --
 
@@ -40,7 +53,9 @@ CREATE TABLE `finishedworkouts` (
 --
 
 INSERT INTO `finishedworkouts` (`id`, `workout`, `completion`, `timecompleted`, `linkeduser`) VALUES
-(26, 'Jack of arms', 75, '2026-05-19 12:29:21', 6);
+(60, 'Comp prep', 100, '2026-05-24 10:46:15', 6),
+(61, 'Comp prep', 100, '2026-05-24 10:51:22', 6),
+(62, 'Comp prep', 100, '2026-05-24 10:51:34', 6);
 
 -- --------------------------------------------------------
 
@@ -82,13 +97,18 @@ CREATE TABLE `workouts` (
 --
 
 INSERT INTO `workouts` (`id`, `schedule_name`, `data`, `linkeduser`, `isfromemplate`, `completed`) VALUES
-(94, 'Jack of arms', '{\n  \"scheduleName\": \"Jack of arms\",\n  \"exercises\": [\n    {\n      \"exercise\": 1,\n      \"name\": \"Kitty cats\",\n      \"sets\": [\n        {\n          \"set\": 1,\n          \"reps\": \"20\",\n          \"weight\": \"20\",\n          \"rpe\": \"6\"\n        },\n        {\n          \"set\": 2,\n          \"reps\": \"30\",\n          \"weight\": \"15\",\n          \"rpe\": \"6\"\n        },\n        {\n          \"set\": 3,\n          \"reps\": \"6-7\",\n          \"weight\": \"30\",\n          \"rpe\": \"8\"\n        }\n      ]\n    },\n    {\n      \"exercise\": 2,\n      \"name\": \"squat\",\n      \"sets\": [\n        {\n          \"set\": 1,\n          \"reps\": \"1\",\n          \"weight\": \"20\",\n          \"rpe\": \"10\"\n        }\n      ]\n    }\n  ]\n}', 6, 0, 1),
-(95, 'big leg', '{\n  \"scheduleName\": \"big leg\",\n  \"exercises\": [\n    {\n      \"exercise\": 1,\n      \"name\": \"Kitty cats\",\n      \"sets\": [\n        {\n          \"set\": 1,\n          \"reps\": \"1\",\n          \"weight\": \"30\",\n          \"rpe\": \"5\"\n        },\n        {\n          \"set\": 2,\n          \"reps\": \"10\",\n          \"weight\": \"20\",\n          \"rpe\": \"7\"\n        },\n        {\n          \"set\": 3,\n          \"reps\": \"100\",\n          \"weight\": \"10\",\n          \"rpe\": \"9\"\n        }\n      ]\n    },\n    {\n      \"exercise\": 2,\n      \"name\": \"squat\",\n      \"sets\": [\n        {\n          \"set\": 1,\n          \"reps\": \"30-67\",\n          \"weight\": \"30\",\n          \"rpe\": \"9\"\n        }\n      ]\n    }\n  ]\n}', 6, 0, 1),
-(96, 'JAHH(från: big leg)', '{\n  \"scheduleName\": \"JAHH(från: big leg)\",\n  \"exercises\": [\n    {\n      \"exercise\": 1,\n      \"name\": \"Kitty cats\",\n      \"sets\": [\n        {\n          \"set\": 1,\n          \"reps\": \"1\",\n          \"weight\": \"1\",\n          \"rpe\": \"12\"\n        },\n        {\n          \"set\": 2,\n          \"reps\": \"12\",\n          \"weight\": \"12\",\n          \"rpe\": \"2\"\n        },\n        {\n          \"set\": 3,\n          \"reps\": \"13\",\n          \"weight\": \"13\",\n          \"rpe\": \"3\"\n        }\n      ]\n    },\n    {\n      \"exercise\": 2,\n      \"name\": \"squat\",\n      \"sets\": [\n        {\n          \"set\": 1,\n          \"reps\": \"120\",\n          \"weight\": \"120\",\n          \"rpe\": \"0.1\"\n        }\n      ]\n    }\n  ]\n}', 6, 1, 1);
+(87, 'Comp prep', '{\n  \"scheduleName\": \"Comp prep\",\n  \"exercises\": [\n    {\n      \"exercise\": 1,\n      \"name\": \"Squat\",\n      \"sets\": [\n        {\n          \"set\": 1,\n          \"reps\": \"1\",\n          \"weight\": \"12\",\n          \"rpe\": \"6\"\n        }\n      ]\n    }\n  ]\n}', 6, 0, 1),
+(89, '1', '{\n  \"scheduleName\": \"1\",\n  \"exercises\": [\n    {\n      \"exercise\": 1,\n      \"name\": \"1\",\n      \"sets\": [\n        {\n          \"set\": 1,\n          \"reps\": \"1\",\n          \"weight\": \"1\",\n          \"rpe\": \"1\"\n        },\n        {\n          \"set\": 2,\n          \"reps\": \"1\",\n          \"weight\": \"1\",\n          \"rpe\": \"1\"\n        },\n        {\n          \"set\": 3,\n          \"reps\": \"1\",\n          \"weight\": \"11\",\n          \"rpe\": \"1\"\n        }\n      ]\n    }\n  ]\n}', 6, 0, 1);
 
 --
 -- Index för dumpade tabeller
 --
+
+--
+-- Index för tabell `excercisescompleted`
+--
+ALTER TABLE `excercisescompleted`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index för tabell `finishedworkouts`
@@ -113,10 +133,16 @@ ALTER TABLE `workouts`
 --
 
 --
+-- AUTO_INCREMENT för tabell `excercisescompleted`
+--
+ALTER TABLE `excercisescompleted`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT för tabell `finishedworkouts`
 --
 ALTER TABLE `finishedworkouts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT för tabell `userinfo`
@@ -128,7 +154,7 @@ ALTER TABLE `userinfo`
 -- AUTO_INCREMENT för tabell `workouts`
 --
 ALTER TABLE `workouts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
