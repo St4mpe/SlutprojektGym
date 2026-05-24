@@ -97,7 +97,7 @@ function createExercise(i) {
 
     section.innerHTML = `
         <section class="name-of-excersice">
-            <input class="name" type="text" name="excersice" placeholder="Excersice name" maxlength="20" required>
+            <input class="name" type="text" name="excersice" placeholder="Excersice name" maxlength="25" required>
             <section class="line"></section>
         </section>
         <section class="sets-container"></section>

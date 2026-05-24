@@ -22,7 +22,15 @@ while($row = mysqli_fetch_assoc($resultC)) {
     $NOEC++;
 }
 
-$procentage = round(($NOEC / $NOEW) * 100);    
+if ($NOEC != 0 || $NOEW != 0)
+{
+    $procentage = round(($NOEC / $NOEW) * 100);    
+}
+else
+{
+    $procentage = 0;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,8 +78,26 @@ $procentage = round(($NOEC / $NOEW) * 100);
                 </section>
             </section>
         </section>
-        <section class="extra-ruta">
-            
+        <section class="sets-track-ruta">
+            <h2>Övningar</h2>
+            <section class="setListBox">
+                <?php 
+                    $sqlExLst = "SELECT * FROM excercisescompleted ORDER BY antal DESC";
+                    $resultExLst = mysqli_query($conn, $sqlExLst);?>
+                    <section class="setsLista">
+                        <p class="setsListaHead">Övning</p>
+                        <p class="setsListaHead">Loggade sets</p>
+                    </section>
+                    <?php
+                    while($rowLst = mysqli_fetch_assoc($resultExLst)):?>
+                        <section class="setsLista">
+                            <p class="setsListaEx"><?php echo $rowLst['namn'] ?></p>
+                            <p class="setsListaEx"><?php echo $rowLst['antal'] ?></p>  
+                        </section>
+                    <?php
+                    endwhile;
+                ?>
+            </section>
         </section>
     </section>
     <section class="avklaradepass">

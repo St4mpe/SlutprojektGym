@@ -9,8 +9,8 @@ function avrageCompletion()
     if (progressData == 0)
     {
         const i = document.getElementById("avg-fill");
-        document.documentElement.style.setProperty('--progressfill', "100%");
-        i.innerHTML="100%";   
+        document.documentElement.style.setProperty('--progressfill', "0%");
+        i.innerHTML="0%";   
     }
     else
     {
