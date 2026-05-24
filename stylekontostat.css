@@ -145,7 +145,7 @@ body{
     place-content: center;
     text-decoration: underline;
 }
-.circle-wrapper {
+.circle-wrapper{
     position: relative;
     width: 160px;
     aspect-ratio: 1;
@@ -153,7 +153,7 @@ body{
     display: grid;
     place-items: center;
 }
-.circle {
+.circle{
     --progress: 0%;
     position: absolute;
     inset: 0;
@@ -161,7 +161,7 @@ body{
     background: conic-gradient(var(--lightblue) var(--progress), var(--progressbargray) 0);
     mask: radial-gradient(circle, transparent 45%, black 46%);
 }
-.circle-wrapper span {
+.circle-wrapper span{
     position: absolute;
     display: grid;
     place-items: center;
@@ -172,7 +172,7 @@ body{
     color: black;
     z-index: 1;
 }
-.circle-wrapper span::after {
+.circle-wrapper span::after{
     content: attr(data-progress);
 }
 .setsLista{
@@ -183,7 +183,7 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
-.setsLista:not(:first-child):not(:last-child) {
+.setsLista:not(:first-child):not(:last-child){
     border-bottom: solid var(--listlinegray) 1px;
 }
 .setListBox{
@@ -191,7 +191,7 @@ body{
     flex-direction: column;
 }
 .setsListaEx{
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem;
 }
 .setsListaHead{
     text-decoration: underline;
@@ -202,4 +202,19 @@ body{
     display: grid;
     place-content: center;
     font-size: 1.1rem;
+}
+.logout-form{
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+.logoutbutton{
+    text-decoration: none;
+    color: white;
+    background-image: var(--bluepurplefade);
+    padding: 0.7rem 2.5rem;
+    border-radius: 0.7rem;
+    border: 0;
+    margin-bottom: 2rem;
+    cursor: pointer;
 }
