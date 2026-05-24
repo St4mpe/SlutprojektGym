@@ -82,7 +82,7 @@ else
             <h2>Övningar</h2>
             <section class="setListBox">
                 <?php 
-                    $sqlExLst = "SELECT * FROM excercisescompleted ORDER BY antal DESC";
+                    $sqlExLst = "SELECT * FROM excercisescompleted WHERE linkeduser={$_SESSION['loggedInUserId']} ORDER BY antal DESC";
                     $resultExLst = mysqli_query($conn, $sqlExLst);?>
                     <section class="setsLista">
                         <p class="setsListaHead">Övning</p>
@@ -96,6 +96,13 @@ else
                         </section>
                     <?php
                     endwhile;
+                    if(mysqli_num_rows($resultExLst) == 0)
+                    {?>
+                        <section class="setsListaTom">
+                            <p>Du har inte loggat några övningar än</p>
+                        </section>
+                    <?php
+                    }
                 ?>
             </section>
         </section>

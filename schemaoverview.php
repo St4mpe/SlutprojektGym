@@ -108,7 +108,7 @@ if (isset($_POST['redigeramall']))
     </section>
     <section class="form">
         <form class="logout-form" action="schemaoverview.php" method="POST">
-            <input class="logoutbutton" type="submit" value="Log out" name="logout"/>
+            <input class="logoutbutton" type="submit" value="Logga ut" name="logout"/>
         </form>
     </section>
 </body>

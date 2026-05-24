@@ -18,18 +18,18 @@ $_SESSION['isFromTemplate'] = 0;
     </header>
     <?php require_once("header.php"); ?>
     <section class="schemanamn">
-        <span id="schedule-name">Name of Schedule:</span>
+        <span id="schedule-name">Namn på Schema:</span>
         <input type="text" name="scheeduleName" min="0" max="9999" required>
     </section>
     <section class="main">
         <section id="exercises-container"></section>
         <section class="add-or-remove-excersice">
-            <button class="formbutton" type="button" onclick="addExercise()">Add excersice</button>
-            <button class="formbutton" type="button" onclick="removeExercise()">Remove excersice</button>
+            <button class="formbutton" type="button" onclick="addExercise()">Lägg till övning</button>
+            <button class="formbutton" type="button" onclick="removeExercise()">Ta bort övning</button>
         </section>
         <section class="save">
             <button class="button" type="button" onclick="back()">Tillbaka</button>  
-            <button class="button" type="button" onclick="collectWorkoutData()">Save Workout</button> 
+            <button class="button" type="button" onclick="collectWorkoutData()">Spara Schema</button> 
         </section>
     </section>
 </body>

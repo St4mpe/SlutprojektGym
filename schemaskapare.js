@@ -64,7 +64,7 @@ function createSetRow(setNumber) {
             <input class="reps" type="text" name="reps" min="1" max="999" required>
         </section>
         <section>
-            <span class="label">Weight (Kg): </span>
+            <span class="label">Vikt (Kg): </span>
             <input type="text" name="weight" min="0" max="9999" required>
         </section>
         <section>
@@ -97,13 +97,13 @@ function createExercise(i) {
 
     section.innerHTML = `
         <section class="name-of-excersice">
-            <input class="name" type="text" name="excersice" placeholder="Excersice name" maxlength="25" required>
+            <input class="name" type="text" name="excersice" placeholder="Namn på övningen" maxlength="50" required>
             <section class="line"></section>
         </section>
         <section class="sets-container"></section>
         <section class="exercise-buttons">
-            <button class="formbutton" type="button" onclick="addSet(this)">Add set</button>
-            <button class="formbutton" type="button" onclick="removeSet(this)">Remove set</button>
+            <button class="formbutton" type="button" onclick="addSet(this)">Lägg till set</button>
+            <button class="formbutton" type="button" onclick="removeSet(this)">Ta bort set</button>
         </section>
     `;
 
