@@ -129,7 +129,11 @@ async function completeWorkout(){
         }
         else if (result == "true")
         {
-            console.log("insert");
+            const responseUpdateDB = await fetch('excerciseUpdateStat.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: specifikExcercise, sets: sets})
+            });
         }
     }
 }
