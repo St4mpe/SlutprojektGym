@@ -66,6 +66,11 @@ body{
 .sets-track-ruta h2{
     text-decoration: underline;
 }
+.avg-bar{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
 .avg-bar h2{
     text-decoration: underline;
 }
@@ -81,7 +86,7 @@ body{
     background: var(--pink);
     height: var(--height);
     width: var(--progressfill);
-    border-radius: 0.5rem 0.2rem 0.2rem 0.5rem;
+    border-radius: 0.5rem;
 }
 .avklaradepass{
     width: 35%;
