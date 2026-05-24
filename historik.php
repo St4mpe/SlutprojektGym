@@ -33,8 +33,10 @@ if(isset($_POST['radera']))
     </section>
     <?php require_once("header.php"); ?>
     <section class="navKonto">
-        <a href="schemaoverview.php">Skapa</a>
-        <a class="gra" href="kontostat.php">Statistik</a>
+        <section class="navbuttons">
+            <a href="schemaoverview.php">Skapa</a>
+            <a class="selected" href="kontostat.php">Statistik</a>
+        </section>
     </section>
     <section class="box">
         <?php
