@@ -22,10 +22,7 @@ while($row = mysqli_fetch_assoc($resultC)) {
     $NOEC++;
 }
 
-
 $procentage = round(($NOEC / $NOEW) * 100);    
-echo $procentage;
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -107,21 +107,21 @@ async function completeWorkout(){
 
         excersiceData.exercise.push({exerciseName: exToJSON.textContent, sets: numSets});
     })
-    
+
     for (const e of excersiceData.exercise) {
         const specifikExcercise = e.exerciseName;
         const sets = e.sets;
-
+        
         const responseExName = await fetch('excerciseCheck.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name: specifikExcercise })
         });
 
-        const result = JSON.stringify(await responseExName.json());
+        const result = await responseExName.json();
         if (result == "false")
         {
-            const responseExName = await fetch('excerciseNewStat.php', {
+            const responseUploadDB = await fetch('excerciseNewStat.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name: specifikExcercise, sets: sets})
