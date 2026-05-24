@@ -28,14 +28,14 @@ $_SESSION['isFromTemplate'] = 0;
     </header>
     <?php require_once("header.php"); ?>
     <section class="schemanamn">
-        <span id="schedule-name">Name of Schedule:</span>
+        <span id="schedule-name">Namn på Schema:</span>
         <input id="scheeduleName" required></input>
     </section>
     <section class="main">
         <section id="exercises-container"></section>
         <section class="save">
             <button class="button" type="button" onclick="back()">Tillbaka</button>  
-            <button class="button" type="button" onclick="collectWorkoutData()">Save Workout</button> 
+            <button class="button" type="button" onclick="collectWorkoutData()">Spara Pass</button> 
         </section>
     </section>
 </body>

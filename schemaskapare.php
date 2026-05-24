@@ -29,7 +29,7 @@ $_SESSION['isFromTemplate'] = 0;
         </section>
         <section class="save">
             <button class="button" type="button" onclick="back()">Tillbaka</button>  
-            <button class="button" type="button" onclick="collectWorkoutData()">Spara Schema</button> 
+            <button class="button" type="button" onclick="collectWorkoutData()">Spara Pass</button> 
         </section>
     </section>
 </body>

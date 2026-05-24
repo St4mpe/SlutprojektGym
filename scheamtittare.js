@@ -39,7 +39,7 @@ function createSetRow(setData) {
             <span class="reps">${setData.reps}</span>
         </section>
         <section>
-            <span class="label">Weight (Kg): </span>
+            <span class="label">Vikt (Kg): </span>
             <span>${setData.weight}</span>
         </section>
         <section>
@@ -47,7 +47,7 @@ function createSetRow(setData) {
             <span>${setData.rpe}</span>
         </section>
         <section>
-            <span class="label">Completed: </span>
+            <span class="label">Avklarat: </span>
             <input type="checkbox" name="completed" min="0" max="9999">
         </section>
     `;

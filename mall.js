@@ -39,7 +39,7 @@ function createSetRow(setData) {
             <input class="reps" type="text" name="reps" min="1" max="999" required>
         </section>
         <section>
-            <span class="label">Weight (Kg): </span>
+            <span class="label">Vikt (Kg): </span>
             <input type="text" name="weight" min="0" max="9999" required>
         </section>
         <section>

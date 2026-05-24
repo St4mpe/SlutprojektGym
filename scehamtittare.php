@@ -26,7 +26,7 @@ $row = mysqli_fetch_assoc($result);
     </header>
     <?php require_once("header.php"); ?>
     <section class="schemanamn">
-        <span id="schedule-name">Name of Schedule:</span>
+        <span id="schedule-name">Namn på Schema:</span>
         <span id="scheeduleName"></span>
     </section>
     <section class="main">
