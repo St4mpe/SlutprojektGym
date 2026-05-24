@@ -32,10 +32,10 @@ $procentage = round(($NOEC / $NOEW) * 100);
     <title>Document</title>
     <link rel="stylesheet" href="stylekontostat.css">
     <link rel="stylesheet" href="navKonto.css">
-    <script src="statistik.js"></script>
     <script>
         const progressData = <?= json_encode($rows) ?>;
     </script>
+    <script src="statistik.js"></script>
 </head>
 <body>
     <section class="headername">
