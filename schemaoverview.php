@@ -1,6 +1,12 @@
 <?php 
 require_once("functions.php");
 
+$crp=new Crypt();
+
+$sqlUser = "SELECT * FROM userinfo WHERE id={$_SESSION['loggedInUserId']}";
+$resultuser = mysqli_query($conn, $sqlUser);
+$rowUser = mysqli_fetch_assoc($resultuser);
+
 if (isset($_POST['logout']))
 {
     $_SESSION['userLoggedIn'] = false;
@@ -51,8 +57,14 @@ if (isset($_POST['redigeramall']))
     </section>
     <?php require_once("header.php"); ?>
     <section class="navKonto">
-        <a class="gra" href="schemaoverview.php">Skapa</a>
-        <a href="kontostat.php">Statistik</a>
+        <section class="showuser">
+            <p>Inloggad användare: </p>
+            <p> <?php echo $crp->dec($rowUser['user'])?> </p>
+        </section>
+        <section class="navbuttons">
+            <a class="selected" href="schemaoverview.php">Skapa</a>
+            <a href="kontostat.php">Statistik</a>
+        </section>
     </section>
     <section class="main">
         <section class="alterativskapa">

@@ -1,12 +1,18 @@
 <?php 
 require_once("functions.php");
 
+$crp=new Crypt();
+
 $sql = "SELECT completion FROM finishedworkouts WHERE linkeduser = {$_SESSION['loggedInUserId']}";
 $result = mysqli_query($conn, $sql);
 $rows = [];
 while($row = mysqli_fetch_assoc($result)) {
     $rows[] = $row['completion'];
 }
+
+$sqlUser = "SELECT * FROM userinfo WHERE id={$_SESSION['loggedInUserId']}";
+$resultuser = mysqli_query($conn, $sqlUser);
+$rowUser = mysqli_fetch_assoc($resultuser);
 
 $sqlWorkouts = "SELECT * FROM workouts WHERE linkeduser = {$_SESSION['loggedInUserId']}";
 $resultW = mysqli_query($conn, $sqlWorkouts);
@@ -41,7 +47,7 @@ else
     <link rel="stylesheet" href="stylekontostat.css">
     <link rel="stylesheet" href="navKonto.css">
     <script>
-        const progressData = <?= json_encode($rows) ?>;
+        const progressData = <?= json_encode($rows); ?>;
     </script>
     <script src="statistik.js"></script>
 </head>
@@ -51,8 +57,14 @@ else
     </section>
     <?php require_once("header.php"); ?>
     <section class="navKonto">
-        <a href="schemaoverview.php">Skapa</a>
-        <a class="gra" href="kontostat.php">Statistik</a>
+        <section class="showuser">
+            <p>Inloggad användare: </p>
+            <p> <?php echo $crp->dec($rowUser['user'])?> </p>
+        </section>
+        <section class="navbuttons">
+            <a href="schemaoverview.php">Skapa</a>
+            <a class="selected" href="kontostat.php">Statistik</a>
+        </section>
     </section>
 <section class="statruta">
     <section class="vänster-kolumn">
