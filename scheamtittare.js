@@ -48,7 +48,7 @@ function createSetRow(setData) {
         </section>
         <section>
             <span class="label">Avklarat: </span>
-            <input type="checkbox" name="completed" min="0" max="9999">
+            <input type="checkbox" name="completed">
         </section>
     `;
 

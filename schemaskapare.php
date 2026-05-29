@@ -19,7 +19,7 @@ $_SESSION['isFromTemplate'] = 0;
     <?php require_once("header.php"); ?>
     <section class="schemanamn">
         <span id="schedule-name">Namn på Schema:</span>
-        <input type="text" name="scheeduleName" min="0" max="9999" required>
+        <input type="text" name="scheeduleName" maxlength="20" pattern="[a-zA-ZåäöÅÄÖ0-9]{1,20}" title="Enbart sammahängande namn utan specialtecken är tillåtet" required>
     </section>
     <section class="main">
         <section id="exercises-container"></section>

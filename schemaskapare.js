@@ -61,15 +61,15 @@ function createSetRow(setNumber) {
         <span class="label set-label">Set ${setNumber}</span>
         <section>
             <span class="label">Reps: </span>
-            <input class="reps" type="text" name="reps" min="1" max="999" required>
+            <input class="reps" type="text" name="reps" maxlength="4" pattern="[0-9]{0,4}" title="Endast siffror är tillåtna" required>
         </section>
         <section>
             <span class="label">Vikt (Kg): </span>
-            <input type="text" name="weight" min="0" max="9999" required>
+            <input type="text" name="weight" maxlength="4" pattern="[0-9]{0,4}" title="Endast siffror är tillåtna" required>
         </section>
         <section>
             <span class="label">RPE: </span>
-            <input type="text" name="rpe" min="0" max="9999" required>
+            <input type="text" name="rpe" maxlength="2" pattern="[0-9]+|-{0,2}" title="Skriv antingen ett tal (endast siffror) eller ett ensamt minustecken (-)" required>
         </section>
     `;
 
@@ -97,7 +97,7 @@ function createExercise(i) {
 
     section.innerHTML = `
         <section class="name-of-excersice">
-            <input class="name" type="text" name="excersice" placeholder="Namn på övningen" maxlength="50" required>
+            <input class="name" type="text" name="excersice" placeholder="Namn på övningen" maxlength="50" pattern="[a-zA-ZåäöÅÄÖ]{1,50}" title="Endast bokstäver är tillåtna" required>
             <section class="line"></section>
         </section>
         <section class="sets-container"></section>

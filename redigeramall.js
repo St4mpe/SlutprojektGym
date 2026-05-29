@@ -41,15 +41,15 @@ function createSetRow(setData) {
         <span class="label set-label">Set ${setData.set}</span>
         <section>
             <span class="label">Reps: </span>
-            <input class="reps" type="text" name="reps" min="1" max="999" required>
+            <input class="reps" type="text" name="reps" maxlength="4" pattern="[0-9]{0,4}" title="Endast siffror är tillåtna" required>
         </section>
         <section>
             <span class="label">Vikt (Kg): </span>
-            <input type="text" name="weight" min="0" max="9999" required>
+            <input type="text" name="weight" maxlength="4" pattern="[0-9]{0,4}" title="Endast siffror är tillåtna" required>
         </section>
         <section>
             <span class="label">RPE: </span>
-            <input type="text" name="rpe" min="0" max="9999" required>
+            <input type="text" name="rpe" maxlength="2" pattern="[0-9]+|-{0,2}" title="Skriv antingen ett tal (endast siffror) eller ett ensamt minustecken (-)" required>
         </section>
     `;
 
