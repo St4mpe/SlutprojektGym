@@ -1,0 +1,46 @@
+@import url("färger.css");
+.headername{
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem;
+}
+.headername h1{
+    font-size: 3rem;
+}
+.window1{
+    display: flex;
+    flex-direction: row;
+    place-content: center;
+    gap: 3rem;
+    margin: 4rem 0rem;
+}
+.text-schemaskapare{
+    width: 40%;
+    display: grid;
+    place-content: center;
+    margin-left: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.bildschemaskapare{
+    width: 60%;
+    margin-right: 2rem;
+}
+.picbredd{
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 12px 0 rgb(214, 214, 214);
+}
+@media (max-width: 850px) {
+    .window1{
+        flex-direction: column;
+    }
+    .text-schemaskapare{
+        width: 90%;
+    }
+    .bildschemaskapare{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

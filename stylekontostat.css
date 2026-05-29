@@ -1,0 +1,249 @@
+@import url("färger.css");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --height: 25px;
+    --progressfill: 25%;
+}
+body{
+    min-height: 100dvh;
+}
+.headername{
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem;
+}
+.headername h1{
+    font-size: 3rem;
+}
+.main{
+    min-height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+.statruta{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 4rem;
+    padding-top: 2rem;
+}
+.vänster-kolumn {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-left: 4rem;
+}
+.progressbars{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    background: var(--lightgray);
+    padding: 2rem 2.5rem;
+    border-radius: 0.7rem;
+    box-shadow: 5px 5px 5px 0 var(--grayshadow);
+}
+.sets-track-ruta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    min-height: 200px;
+    background: var(--lightgray);
+    border-radius: 0.7rem;
+    padding: 2rem 2.5rem;
+    box-shadow: 5px 5px 5px 0 var(--grayshadow);
+    margin-bottom: 3rem;
+}
+.sets-track-ruta h2{
+    text-decoration: underline;
+}
+.avg-bar{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.avg-bar h2{
+    text-decoration: underline;
+}
+.background-fill{
+    background: var(--progressbargray);
+    width: 100%;
+    height: var(--height);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.5rem;
+}
+.avg-bar-fill{
+    background: var(--pink);
+    height: var(--height);
+    width: var(--progressfill);
+    border-radius: 0.5rem;
+}
+.avklaradepass{
+    width: 35%;
+    background: var(--lightgray);
+    margin-right: 4rem;
+    border-radius: 0.5rem;
+    box-shadow: 5px 5px 5px 0 var(--grayshadow);
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+}
+.avklaradepass h2{
+    text-decoration: underline;
+    text-align: center;
+}
+.avklarepasslista{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+.listoutput {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+.listoutput p:first-child {
+    text-align: left;
+}
+.listoutput p:nth-child(2) {
+    text-align: center;
+}
+.listoutput p:last-child {
+    text-align: right;
+}
+.historikknapp{
+    display: grid;
+    place-content: center;
+    background: var(--bluepurplefade);
+    padding: 0.5rem 1rem;
+    border-radius: 0.7rem;
+    margin: 1rem auto 1rem auto;
+}
+.historikknapp a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+.circleProgress{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    margin: 3rem auto 0rem auto;
+}
+.centerHeader{
+    display: grid;
+    place-content: center;
+    text-decoration: underline;
+}
+.circle-wrapper{
+    position: relative;
+    width: 160px;
+    aspect-ratio: 1;
+    justify-self: center;
+    display: grid;
+    place-items: center;
+}
+.circle{
+    --progress: 0%;
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(var(--lightblue) var(--progress), var(--progressbargray) 0);
+    mask: radial-gradient(circle, transparent 45%, black 46%);
+}
+.circle-wrapper span{
+    position: absolute;
+    display: grid;
+    place-items: center;
+    place-content: center;
+    flex-direction: column;
+    gap: 0.2rem;
+    font-size: 1.2rem;
+    color: black;
+    z-index: 1;
+}
+.circle-wrapper span::after{
+    content: attr(data-progress);
+}
+.setsLista{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+}
+.setsLista:not(:first-child):not(:last-child){
+    border-bottom: solid var(--listlinegray) 1px;
+}
+.setListBox{
+    display: flex;
+    flex-direction: column;
+}
+.setsListaEx{
+    padding: 0.5rem;
+}
+.setsListaHead{
+    text-decoration: underline;
+}
+.setsListaTom{
+    width: 100%;
+    padding: 2rem;
+    display: grid;
+    place-content: center;
+    font-size: 1.1rem;
+}
+.logout-form{
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+.logoutbutton{
+    text-decoration: none;
+    color: white;
+    background-image: var(--bluepurplefade);
+    padding: 0.7rem 2.5rem;
+    border-radius: 0.7rem;
+    border: 0;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+@media (max-width: 1000px){
+
+    .statruta{
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .vänster-kolumn{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .avklaradepass{
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .circleProgress{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .setsLista{
+        width: 100%;
+    }
+}
