@@ -29,3 +29,9 @@
     gap: 2rem;
     justify-content: center;
 }
+
+@media screen and (max-width: 1050px){
+    .navKonto{
+        width: 55%;
+    }
+}

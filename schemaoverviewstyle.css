@@ -136,3 +136,31 @@
     color: white;
     cursor: pointer;
 }
+@media screen and (max-width: 1050px){
+
+    .main{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .alterativskapa,
+    .load{
+        width: 100%;
+    }
+    .skapadescheman,
+    .mallar{
+        width: 95%;
+        min-height: 200px;
+    }
+    .indischeman{
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .load-form{
+        flex-wrap: wrap;
+        gap: 0.7rem;
+    }
+    .indischeman section{
+        gap: 0.7rem;
+        flex-wrap: wrap;
+    }
+}
